@@ -1,0 +1,5 @@
+Full allo object (allo == shared by reference) {{allo | json}}<br />
+Shared.id and Shared.name : {{shared.id}} {{shared.name}}<br />
+
+An input with ng-model for double binding : <input type="text" id="firstdoublebinding" [(ngModel)]="allo.name" /><br />
+The child directive setted in the parent template : <child [whatever]="allo"></child>
