@@ -1,17 +1,31 @@
 import {Component} from '@angular/core';
+import {SharedService} from './shared.service';
 import {Shared} from './shared';
+import {OnInit} from '@angular/core';
 
-const SHARED: Shared = {id: 11, name: 'Mr. Nice'};
 
 @Component({
   selector: 'parent',
-  template: require('./parent.html')
+  template: require('./parent.html'),
+  providers: [
+    SharedService,
+  ],
 })
-export class ParentComponent {
+export class ParentComponent implements OnInit {
   allo: any;
-  shared = SHARED;
+  shared: Shared;
 
-  constructor() {
-    this.allo = this.shared;
+  constructor(private sharedService: SharedService) {
+  }
+
+  getShared(): void {
+    this.sharedService.getShared().then(shared => {
+      this.shared = shared;
+      this.allo = this.shared;
+    });
+  }
+
+  ngOnInit(): void {
+    this.getShared();
   }
 }
