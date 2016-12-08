@@ -10,8 +10,8 @@ import {MainComponent} from './main';
 import {HeaderComponent} from './header';
 import {TitleComponent} from './title';
 import {FooterComponent} from './footer';
-import {ChildComponent} from './child';
-import {ParentComponent} from './parent';
+import {ChildComponent} from './myCode/child';
+import {ParentComponent} from './myCode/parent';
 
 @NgModule({
   imports: [
@@ -28,7 +28,6 @@ import {ParentComponent} from './parent';
     FooterComponent,
     ChildComponent,
     ParentComponent,
-
   ],
   bootstrap: [RootComponent]
 })
