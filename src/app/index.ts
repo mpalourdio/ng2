@@ -29,7 +29,7 @@ import {ParentComponent} from './myCode/parent';
     ChildComponent,
     ParentComponent,
   ],
-  bootstrap: [RootComponent]
+  bootstrap: [RootComponent],
 })
 export class AppModule {
 }
