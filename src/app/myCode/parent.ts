@@ -5,7 +5,7 @@ import {OnInit} from '@angular/core';
 
 
 @Component({
-  selector: 'parent',
+  selector: 'parent-component',
   template: require('./parent.html'),
   providers: [
     SharedService,
