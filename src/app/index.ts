@@ -14,22 +14,22 @@ import {ChildComponent} from './myCode/child';
 import {ParentComponent} from './myCode/parent';
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    routing,
-    TechsModule,
-    FormsModule,
-  ],
-  declarations: [
-    RootComponent,
-    MainComponent,
-    HeaderComponent,
-    TitleComponent,
-    FooterComponent,
-    ChildComponent,
-    ParentComponent,
-  ],
-  bootstrap: [RootComponent],
+    imports: [
+        BrowserModule,
+        routing,
+        TechsModule,
+        FormsModule,
+    ],
+    declarations: [
+        RootComponent,
+        MainComponent,
+        HeaderComponent,
+        TitleComponent,
+        FooterComponent,
+        ChildComponent,
+        ParentComponent,
+    ],
+    bootstrap: [RootComponent],
 })
 export class AppModule {
 }

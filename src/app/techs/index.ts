@@ -6,16 +6,17 @@ import {TechsComponent} from './techs';
 import {TechComponent} from './tech';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    HttpModule
-  ],
-  declarations: [
-    TechsComponent,
-    TechComponent
-  ],
-  exports: [
-    TechsComponent
-  ]
+    imports: [
+        CommonModule,
+        HttpModule
+    ],
+    declarations: [
+        TechsComponent,
+        TechComponent
+    ],
+    exports: [
+        TechsComponent
+    ]
 })
-export class TechsModule {}
+export class TechsModule {
+}

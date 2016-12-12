@@ -14,10 +14,10 @@ import {AppModule} from './app';
 
 declare var process: any;
 if (process.env.NODE_ENV === 'production') {
-  enableProdMode();
+    enableProdMode();
 } else {
-  Error['stackTraceLimit'] = Infinity; // tslint:disable-line:no-string-literal
-  require('zone.js/dist/long-stack-trace-zone'); // tslint:disable-line:no-var-requires
+    Error['stackTraceLimit'] = Infinity; // tslint:disable-line:no-string-literal
+    require('zone.js/dist/long-stack-trace-zone'); // tslint:disable-line:no-var-requires
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule);
