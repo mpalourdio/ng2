@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {SharedService} from './shared.service';
-import {Shared} from './shared';
+import {SharedObject} from './shared';
 import {OnInit} from '@angular/core';
 
 
@@ -13,7 +13,7 @@ import {OnInit} from '@angular/core';
 })
 export class ParentComponent implements OnInit {
     allo: any;
-    shared: Shared;
+    shared: SharedObject;
 
     constructor(private sharedService: SharedService) {
     }

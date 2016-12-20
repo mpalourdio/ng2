@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
-import {Shared} from './shared';
+import {SharedObject} from './shared';
 
-const SHARED: Shared = {id: 666, name: 'Mr. Hard'};
+const SHARED: SharedObject = {id: 666, name: 'Mr. Hard'};
 
 @Injectable()
 export class SharedService {
 
-    getShared(): Promise<Shared> {
+    getShared(): Promise<SharedObject> {
         return Promise.resolve(SHARED);
     }
 }

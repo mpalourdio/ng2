@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Shared} from './shared';
+import {SharedObject} from './shared';
 
 @Component({
     selector: 'child-component',
@@ -7,5 +7,5 @@ import {Shared} from './shared';
 })
 export class ChildComponent {
     @Input()
-    whatever: Shared;
+    whatever: SharedObject;
 }

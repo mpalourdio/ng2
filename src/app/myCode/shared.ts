@@ -1,4 +1,4 @@
-export class Shared {
+export class SharedObject {
     id: number;
     name: string;
 }
