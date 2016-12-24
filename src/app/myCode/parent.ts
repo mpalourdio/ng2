@@ -3,7 +3,6 @@ import {SharedService} from './shared.service';
 import {SharedObject} from './shared';
 import {OnInit} from '@angular/core';
 
-
 @Component({
     selector: 'parent-component',
     template: require('./parent.html'),
