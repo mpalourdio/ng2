@@ -1,4 +1,5 @@
 import {Component, Input} from "@angular/core";
+import {DummyInterface} from "../dummy-interface";
 
 @Component({
     selector: 'app-second',
@@ -7,7 +8,7 @@ import {Component, Input} from "@angular/core";
 })
 export class SecondComponent {
     @Input()
-    bindingFromAppComponent;
+    bindingFromAppComponent: DummyInterface;
 
     constructor() {
     }

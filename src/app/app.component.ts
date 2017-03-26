@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {Dummy} from "./dummy";
+import {DummyInterface} from "./dummy-interface";
 
 @Component({
     selector: 'app-root',
@@ -8,7 +9,8 @@ import {Dummy} from "./dummy";
 })
 export class AppComponent implements OnInit {
     title = 'app works!';
-    inputText: Dummy;
+    inputText: DummyInterface;
+    inputTextBinded: number;
 
 
     ngOnInit(): void {
@@ -19,7 +21,8 @@ export class AppComponent implements OnInit {
         let counter = 1;
         this.inputText = new Dummy();
         setInterval(() => {
-            this.inputText.id = counter;
+            this.inputText.setId(counter);
+            this.inputTextBinded = this.inputText.getId();
             counter++;
         }, 1000);
     };
