@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { SecondComponent } from './second/second.component';
+import { ColorDirective } from './color.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SecondComponent
+    SecondComponent,
+    ColorDirective
   ],
   imports: [
     BrowserModule,

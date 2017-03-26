@@ -10,7 +10,9 @@ export class SecondComponent {
     @Input()
     bindingFromAppComponent: DummyInterface;
 
-    constructor() {
-    }
+    color;
 
+    constructor() {
+        this.color = 'type a known html color';
+    }
 }
