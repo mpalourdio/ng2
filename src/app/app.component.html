@@ -1,3 +1,7 @@
 <h1>
-  {{title}}
+  {{title}}<br>
+  <input type="text" id="firstdoublebinding" [(ngModel)]="inputText.id"/>
+  {{inputText.id}}<br><br>
+  <app-second [bindingFromAppComponent]="inputText"></app-second>
+
 </h1>
