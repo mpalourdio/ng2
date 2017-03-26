@@ -14,10 +14,10 @@ export class AppComponent implements OnInit {
 
 
     ngOnInit(): void {
-        this.after3seconds();
+        this.initInterval();
     }
 
-    after3seconds(): void {
+    initInterval(): void {
         let counter = 1;
         this.inputText = new Dummy();
         setInterval(() => {
