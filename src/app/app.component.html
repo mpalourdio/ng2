@@ -1,7 +1,10 @@
 <h1>
   {{title}}<br>
   <input type="text" id="firstdoublebinding" [(ngModel)]="inputTextBinded"/>
-  {{inputText.getId()}}<br><br>
+  {{inputText.getId()}}
+  <span *ngIf="inputText.getId() <= 1">second</span>
+  <span *ngIf="inputText.getId() > 1">seconds</span>
+  <br><br>
   <app-second [bindingFromAppComponent]="inputText"></app-second>
 
 </h1>

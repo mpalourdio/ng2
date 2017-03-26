@@ -8,7 +8,7 @@ import {DummyInterface} from "./dummy-interface";
     styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-    title = 'app works!';
+    title = 'Hello World!';
     inputText: DummyInterface;
     inputTextBinded: number;
 
