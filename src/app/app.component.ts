@@ -21,6 +21,9 @@ export class AppComponent implements OnInit {
         let counter = 1;
         this.inputText = new Dummy();
         setInterval(() => {
+            if (counter > 5) {
+                counter = 1;
+            }
             this.inputText.setId(counter);
             this.inputTextBinded = this.inputText.getId();
             counter++;
