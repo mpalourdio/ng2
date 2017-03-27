@@ -1,17 +1,17 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
-import {AppComponent} from './app.component';
-import {SecondComponent} from './second/second.component';
-import {ColorDirective} from './color.directive';
+import { AppComponent } from './app.component';
+import { SecondComponent } from './second/second.component';
+import { ColorDirective } from './color.directive';
 
 @NgModule({
     declarations: [
         AppComponent,
         SecondComponent,
-        ColorDirective
+        ColorDirective,
     ],
     imports: [
         BrowserModule,

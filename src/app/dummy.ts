@@ -1,4 +1,4 @@
-import {DummyInterface} from "./dummy-interface";
+import { DummyInterface } from './dummy-interface';
 export class Dummy implements DummyInterface {
     private _id: number;
 

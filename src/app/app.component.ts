@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {DummyInterface} from './dummy-interface';
-import {Hydrate} from './hydrate';
-import {HttpserviceService} from './httpservice.service';
-import {Dummy} from './dummy';
+import { Component, OnInit } from '@angular/core';
+import { DummyInterface } from './dummy-interface';
+import { Hydrate } from './hydrate';
+import { HttpserviceService } from './httpservice.service';
+import { Dummy } from './dummy';
 
 @Component({
     selector: 'app-root',

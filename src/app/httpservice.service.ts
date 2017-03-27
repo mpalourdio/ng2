@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
-import {Http, Response} from '@angular/http';
-import {Hydrate} from './hydrate';
+import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { Hydrate } from './hydrate';
 import 'rxjs/add/operator/toPromise';
 
 const url = '/api/hydrate';
