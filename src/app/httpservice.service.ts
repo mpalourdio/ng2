@@ -3,7 +3,7 @@ import {Http, Response} from '@angular/http';
 import {Hydrate} from './hydrate';
 import 'rxjs/add/operator/toPromise';
 
-const url = 'http://localhost:4200/api/hydrate';
+const url = '/api/hydrate';
 
 @Injectable()
 export class HttpserviceService {
