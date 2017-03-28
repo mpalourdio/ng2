@@ -48,6 +48,5 @@ describe('AppComponent', () => {
             .nativeElement;
 
         expect(parseInt(input.value, 10)).toBe(inputTextBindedValue);
-
     }));
 });
