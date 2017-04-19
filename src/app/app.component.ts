@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
     inputText: DummyInterface;
     inputTextBinded: number;
     httpResults: Hydrate[];
+    doubleBindedParent = 'Initial Value from AppComponent';
 
     constructor(private httpService: HttpserviceService) {
     }

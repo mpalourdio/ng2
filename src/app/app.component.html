@@ -1,7 +1,7 @@
 <h1>
     {{title}}<br>
     <img src="assets/1/2/index.png">
-    <input type="text" id="firstdoublebinding" [(ngModel)]="inputTextBinded"/>
+    <input type="text" id="first-binding" [(ngModel)]="inputTextBinded"/>
     {{inputText.getId()}}
     <span *ngIf="inputText.getId() <= 1">second</span>
     <span *ngIf="inputText.getId() > 1">seconds</span>
@@ -10,5 +10,10 @@
     {{httpResults | json}}
     <br>
     <br>
-    <app-second [bindingFromAppComponent]="inputText"></app-second>
+    <app-second
+            [bindingFromAppComponent]="inputText"
+            [(doubleBindedChild)]="doubleBindedParent"
+    ></app-second>
+    <br/>
+    <input type="text" id="double-binded-parent" [(ngModel)]="doubleBindedParent"><br/>
 </h1>

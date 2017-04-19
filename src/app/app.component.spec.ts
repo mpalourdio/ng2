@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed, tick } from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
 import { HttpserviceService } from './httpservice.service';
@@ -7,7 +7,6 @@ import { SecondComponent } from './second/second.component';
 import { ColorDirective } from './color.directive';
 import { HttpModule } from '@angular/http';
 import { By } from '@angular/platform-browser';
-import { fakeAsync } from '@angular/core/testing';
 
 describe('AppComponent', () => {
 
@@ -44,9 +43,31 @@ describe('AppComponent', () => {
 
         const input = fixture
             .debugElement
-            .query(By.css('#firstdoublebinding'))
+            .query(By.css('#first-binding'))
             .nativeElement;
 
         expect(parseInt(input.value, 10)).toBe(inputTextBindedValue);
     }));
+
+    it('should detect double binding', fakeAsync(() => {
+        const childValue = 'changed';
+        dispatchNgModelEventOnElement('#double-binded-child', childValue);
+
+        const parentElement = fixture
+            .debugElement
+            .query(By.css('#double-binded-parent'))
+            .nativeElement;
+
+        expect(parentElement.value).toBe(childValue);
+    }));
+
+    function dispatchNgModelEventOnElement(selector: string, value: string) {
+
+        const input = fixture.debugElement.query(By.css(selector)).nativeElement;
+        input.value = value;
+
+        input.dispatchEvent(new Event('input'));
+        fixture.detectChanges();
+        tick();
+    }
 });
