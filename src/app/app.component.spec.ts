@@ -1,7 +1,6 @@
 import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
-import { HttpserviceService } from './httpservice.service';
 import { FormsModule } from '@angular/forms';
 import { SecondComponent } from './second/second.component';
 import { ColorDirective } from './color.directive';
@@ -16,7 +15,6 @@ describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [AppComponent, SecondComponent, ColorDirective],
-            providers: [HttpserviceService],
             imports: [FormsModule, HttpModule],
         })
             .compileComponents();
