@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { SecondComponent } from './second/second.component';
 import { ColorDirective } from './color.directive';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        SecondComponent,
+        ChildComponent,
         ColorDirective,
     ],
     imports: [

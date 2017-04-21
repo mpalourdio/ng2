@@ -2,10 +2,10 @@ import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { SecondComponent } from './second/second.component';
 import { ColorDirective } from './color.directive';
 import { HttpModule } from '@angular/http';
 import { By } from '@angular/platform-browser';
+import { ChildComponent } from './child/child.component';
 
 describe('AppComponent', () => {
 
@@ -14,7 +14,7 @@ describe('AppComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [AppComponent, SecondComponent, ColorDirective],
+            declarations: [AppComponent, ChildComponent, ColorDirective],
             imports: [FormsModule, HttpModule],
         })
             .compileComponents();

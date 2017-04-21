@@ -10,10 +10,10 @@
     {{httpResults | json}}
     <br>
     <br>
-    <app-second
+    <app-child
             [bindingFromAppComponent]="inputText"
             [(doubleBindedChild)]="doubleBindedParent"
-    ></app-second>
+    ></app-child>
     <br/>
     <input type="text" id="double-binded-parent" [(ngModel)]="doubleBindedParent"><br/>
 </h1>

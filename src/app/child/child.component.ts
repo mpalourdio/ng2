@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from
 import { DummyInterface } from '../dummy-interface';
 
 @Component({
-    selector: 'app-second',
-    templateUrl: './second.component.html',
-    styleUrls: ['./second.component.css']
+    selector: 'app-child',
+    templateUrl: './child.component.html',
+    styleUrls: ['./child.component.css']
 })
-export class SecondComponent implements OnChanges {
+export class ChildComponent implements OnChanges {
 
     @Input()
     bindingFromAppComponent: DummyInterface;
