@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ColorDirective } from './color.directive';
 import { ChildComponent } from './child/child.component';
+import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { ChildComponent } from './child/child.component';
     imports: [
         BrowserModule,
         FormsModule,
-        HttpModule
+        HttpModule,
+        NgHttpLoaderModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
