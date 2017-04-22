@@ -6,6 +6,7 @@ import { ColorDirective } from './color.directive';
 import { HttpModule } from '@angular/http';
 import { By } from '@angular/platform-browser';
 import { ChildComponent } from './child/child.component';
+import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
 
 describe('AppComponent', () => {
 
@@ -15,7 +16,7 @@ describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [AppComponent, ChildComponent, ColorDirective],
-            imports: [FormsModule, HttpModule],
+            imports: [FormsModule, HttpModule, NgHttpLoaderModule],
         })
             .compileComponents();
     }));
