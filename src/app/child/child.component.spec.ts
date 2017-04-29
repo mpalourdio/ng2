@@ -43,4 +43,14 @@ describe('ChildComponent', () => {
 
         expect(bgColor).toBe('blue');
     });
+
+    it('should correctly detect ng-model changes and emit notifications', async(() => {
+        const inputEvent = 'an input';
+
+        component.doubleBindedChildChange.subscribe(
+            x => expect(x).toBe(inputEvent)
+        );
+
+        component.detectNgModelChanges(inputEvent);
+    }));
 });
