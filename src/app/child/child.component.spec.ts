@@ -26,7 +26,7 @@ describe('ChildComponent', () => {
         element = fixture.nativeElement; // to access DOM element
     });
 
-    it('should create', () => {
+    it('should create a component instance', () => {
         expect(component).toBeTruthy();
     });
 
