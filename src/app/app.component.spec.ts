@@ -33,7 +33,7 @@ describe('AppComponent', () => {
         expect(component.title).toBe('Hello World!');
     });
 
-    it('should bind text to input', fakeAsync(() => {
+    it('should bind value to the #first-binding input', fakeAsync(() => {
         const inputTextBindedValue = 5;
         component.inputTextBinded = inputTextBindedValue;
 
@@ -48,7 +48,7 @@ describe('AppComponent', () => {
         expect(parseInt(input.value, 10)).toBe(inputTextBindedValue);
     }));
 
-    it('should detect double binding', fakeAsync(() => {
+    it('should correctly double bind', fakeAsync(() => {
         const childValue = 'changed';
         dispatchNgModelEventOnElement('#double-binded-child', childValue);
 
