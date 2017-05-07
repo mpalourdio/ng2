@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DummyInterface } from './dummy-interface';
 import { Dummy } from './dummy';
+import { Spinkit } from 'ng-http-loader/spinkits';
 
 @Component({
     selector: 'app-root',
@@ -12,6 +13,7 @@ export class AppComponent implements OnInit {
     inputText: DummyInterface;
     inputTextBinded: number;
     doubleBindedParent = 'Initial Value from AppComponent';
+    Spinkit = Spinkit;
 
     ngOnInit(): void {
         this.initInterval();
