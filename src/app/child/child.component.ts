@@ -1,12 +1,16 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import {
+    AfterViewInit, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges,
+    ViewChild
+} from '@angular/core';
 import { DummyInterface } from '../dummy-interface';
+import { ColorDirective } from '../color.directive';
 
 @Component({
     selector: 'app-child',
     templateUrl: './child.component.html',
     styleUrls: ['./child.component.css']
 })
-export class ChildComponent implements OnChanges {
+export class ChildComponent implements OnChanges, AfterViewInit {
 
     @Input()
     bindingFromAppComponent: DummyInterface;
@@ -16,6 +20,9 @@ export class ChildComponent implements OnChanges {
 
     @Output()
     doubleBindedChildChange = new EventEmitter<string>();
+
+    @ViewChild(ColorDirective)
+    colorDirective: ColorDirective;
 
     color;
 
@@ -29,5 +36,9 @@ export class ChildComponent implements OnChanges {
 
     ngOnChanges(changes: SimpleChanges): void {
         console.log('this only works when triggered from parent');
+    }
+
+    ngAfterViewInit() {
+        console.log(this.colorDirective);
     }
 }
