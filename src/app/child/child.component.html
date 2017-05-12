@@ -2,4 +2,4 @@
     <input type="text" [(ngModel)]="color">
     {{bindingFromAppComponent | json}}
 </p>
-<input type="text" id="double-binded-child" [ngModel]="doubleBindedChild" (ngModelChange)="detectNgModelChanges($event)">
+<input type="text" id="double-binded-child" [ngModel]="doubleBindedChild" (ngModelChange)="emitNgModelChanges($event)">

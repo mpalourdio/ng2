@@ -51,6 +51,6 @@ describe('ChildComponent', () => {
             x => expect(x).toBe(inputEvent)
         );
 
-        component.detectNgModelChanges(inputEvent);
+        component.emitNgModelChanges(inputEvent);
     }));
 });
