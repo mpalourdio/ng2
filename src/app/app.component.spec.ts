@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { By } from '@angular/platform-browser';
 import { ChildComponent } from './child/child.component';
 import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
+import { ToUppercasePipe } from './to-uppercase.pipe';
 
 describe('AppComponent', () => {
 
@@ -15,7 +16,7 @@ describe('AppComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [AppComponent, ChildComponent, ColorDirective],
+            declarations: [AppComponent, ChildComponent, ColorDirective, ToUppercasePipe],
             imports: [FormsModule, HttpModule, NgHttpLoaderModule],
         })
             .compileComponents();

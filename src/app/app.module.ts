@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { ColorDirective } from './color.directive';
 import { ChildComponent } from './child/child.component';
 import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
+import { ToUppercasePipe } from './to-uppercase.pipe';
 
 @NgModule({
     declarations: [
         AppComponent,
         ChildComponent,
         ColorDirective,
+        ToUppercasePipe,
     ],
     imports: [
         BrowserModule,
