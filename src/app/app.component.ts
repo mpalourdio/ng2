@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DummyInterface } from './dummy-interface';
 import { Dummy } from './dummy';
 import { Spinkit } from 'ng-http-loader/spinkits';
@@ -8,7 +8,8 @@ import { Spinkit } from 'ng-http-loader/spinkits';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
+    private intervalId;
     title = 'Hello World!';
     inputText: DummyInterface;
     inputTextBinded: number;
@@ -19,10 +20,16 @@ export class AppComponent implements OnInit {
         this.initInterval();
     }
 
+    ngOnDestroy(): void {
+        if (this.intervalId) {
+            clearInterval(this.intervalId);
+        }
+    }
+
     initInterval(): void {
         let counter = 1;
         this.inputText = new Dummy();
-        setInterval(() => {
+        this.intervalId = setInterval(() => {
             if (counter > 5) {
                 counter = 1;
             }
