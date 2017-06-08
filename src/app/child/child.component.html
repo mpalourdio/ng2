@@ -1,5 +1,8 @@
-<p appColor [color]="color">
-    <input type="text" [(ngModel)]="color">
-    {{bindingFromAppComponent | json}}
-</p>
-<input type="text" id="double-binded-child" [ngModel]="doubleBindedChild" (ngModelChange)="emitNgModelChanges($event)">
+<div id="sec">
+    <h1>ChildComponent</h1>
+    <p appColor [color]="color">
+        <input type="text" [(ngModel)]="color">
+        {{bindingFromAppComponent | json}}
+    </p>
+    <input type="text" id="double-binded-child" [ngModel]="doubleBindedChild" (ngModelChange)="emitNgModelChanges($event)">
+</div>

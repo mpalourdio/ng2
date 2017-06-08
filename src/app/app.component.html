@@ -1,17 +1,35 @@
-<spinner [spinner]="Spinkit.skWanderingCubes" [backgroundColor]="'#ff0000'"></spinner>
-<h1>
-    {{title}}<br>
-    <img src="assets/1/2/index.png">
-    <input type="text" id="first-binding" [(ngModel)]="inputTextBinded"/>
-    {{inputText.getId()}}
-    <span *ngIf="inputText.getId() <= 1">second</span>
-    <span *ngIf="inputText.getId() > 1">seconds</span>
-    <i class="fa fa-caret-square-o-down"></i>
-    <app-child
+<div id="first">
+    <h1>AppComponent</h1>
+    <spinner [spinner]="Spinkit.skWanderingCubes" [backgroundColor]="'#ff0000'"></spinner>
+    <div>{{title}}<br>
+        <img src="assets/1/2/index.png">
+    </div>
+
+    <div>
+        <input type="text" id="first-binding" [(ngModel)]="inputTextBinded"/>
+        {{inputText.getId()}}
+        <span *ngIf="inputText.getId() <= 1">second</span>
+        <span *ngIf="inputText.getId() > 1">seconds</span>
+        <i class="fa fa-caret-square-o-down"></i>
+    </div>
+
+    <div>
+        <app-child
             [bindingFromAppComponent]="inputText"
-            [(doubleBindedChild)]="doubleBindedParent"
-    ></app-child>
-    <br/>
-    <input type="text" id="double-binded-parent" [(ngModel)]="doubleBindedParent"><br/>
-    {{doubleBindedParent | toUppercase}}
-</h1>
+            [(doubleBindedChild)]="doubleBindedParent">
+        </app-child>
+    </div>
+
+    <div>
+        <input type="text" id="double-binded-parent" [(ngModel)]="doubleBindedParent"><br/>
+        {{doubleBindedParent | toUppercase}}
+    </div>
+
+    <div>
+        <small>Selected values : {{selectedValues}}</small>
+        <br>
+        <select multiple [(ngModel)]="selectedValues" name="multiselect">
+            <option *ngFor="let item of availableValues" [value]="item.value">{{item.label}}</option>
+        </select>
+    </div>
+</div>

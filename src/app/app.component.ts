@@ -15,9 +15,24 @@ export class AppComponent implements OnInit, OnDestroy {
     inputTextBinded: number;
     doubleBindedParent = 'Initial Value from AppComponent';
     Spinkit = Spinkit;
+    selectedValues: string[];
+    availableValues: any[];
 
     ngOnInit(): void {
         this.initInterval();
+        this.setMultiselectValues();
+    }
+
+    setMultiselectValues(): void {
+        this.availableValues = [
+            {
+                label: 'first',
+                value: 1
+            },
+            {
+                label: 'second',
+                value: 2
+            }];
     }
 
     ngOnDestroy(): void {
