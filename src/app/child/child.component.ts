@@ -30,7 +30,7 @@ export class ChildComponent implements OnChanges, AfterViewInit {
         this.color = 'type a known html color';
     }
 
-    emitNgModelChanges(event) {
+    emitNgModelChanges(event): void {
         this.doubleBindedChildChange.emit(event);
     }
 
