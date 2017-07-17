@@ -1,13 +1,12 @@
 import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
-
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ColorDirective } from './color.directive';
-import { HttpModule } from '@angular/http';
 import { By } from '@angular/platform-browser';
 import { ChildComponent } from './child/child.component';
 import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
 import { ToUppercasePipe } from './to-uppercase.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
 
@@ -17,7 +16,7 @@ describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [AppComponent, ChildComponent, ColorDirective, ToUppercasePipe],
-            imports: [FormsModule, HttpModule, NgHttpLoaderModule],
+            imports: [FormsModule, HttpClientModule, NgHttpLoaderModule],
         })
             .compileComponents();
     }));
