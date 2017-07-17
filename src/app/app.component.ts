@@ -14,7 +14,7 @@ export class AppComponent implements OnInit, OnDestroy {
     inputText: DummyInterface;
     inputTextBinded: number;
     doubleBindedParent = 'Initial Value from AppComponent';
-    Spinkit = Spinkit;
+    spinkit = Spinkit;
     selectedValues: string[];
     availableValues: any[];
 
