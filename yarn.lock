@@ -3386,9 +3386,9 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
-ng-http-loader@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/ng-http-loader/-/ng-http-loader-0.3.0.tgz#5f27be38bf3b01216fa473527313d42da24bc02a"
+ng-http-loader@^0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/ng-http-loader/-/ng-http-loader-0.3.3.tgz#56751f8cfb44e6796cb694224e13bbd8b5595bb5"
   dependencies:
     "@angular/common" "^4.3.0"
     "@angular/compiler" "^4.3.0"
@@ -3396,7 +3396,7 @@ ng-http-loader@^0.3.0:
     "@angular/platform-browser" "^4.3.0"
     "@angular/platform-browser-dynamic" "^4.3.0"
     core-js "^2.4.1"
-    rxjs "^5.4.1"
+    rxjs "^5.4.2"
     zone.js "^0.8.14"
 
 no-case@^2.2.0:
@@ -4589,7 +4589,7 @@ rx-lite@*, rx-lite@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-4.0.8.tgz#0b1e11af8bc44836f04a6407e92da42467b79444"
 
-rxjs@^5.4.1, rxjs@^5.4.2:
+rxjs@^5.4.2:
   version "5.4.3"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.4.3.tgz#0758cddee6033d68e0fd53676f0f3596ce3d483f"
   dependencies:
