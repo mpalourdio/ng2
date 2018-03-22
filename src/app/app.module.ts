@@ -7,6 +7,7 @@ import { ChildComponent } from './child/child.component';
 import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
 import { ToUppercasePipe } from './to-uppercase.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { FortAwesomeModule } from '../fortawesome.module';
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
         FormsModule,
         HttpClientModule,
         NgHttpLoaderModule,
+        FortAwesomeModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
