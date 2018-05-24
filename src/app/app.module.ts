@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ColorDirective } from './color.directive';
 import { ChildComponent } from './child/child.component';
-import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
+import { NgHttpLoaderModule } from 'ng-http-loader';
 import { ToUppercasePipe } from './to-uppercase.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { FortAwesomeModule } from '../fortawesome.module';

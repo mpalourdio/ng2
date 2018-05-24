@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ColorDirective } from './color.directive';
 import { By } from '@angular/platform-browser';
 import { ChildComponent } from './child/child.component';
-import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
+import { NgHttpLoaderModule } from 'ng-http-loader';
 import { ToUppercasePipe } from './to-uppercase.pipe';
 import { HttpClientModule } from '@angular/common/http';
 

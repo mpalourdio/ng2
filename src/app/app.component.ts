@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DummyInterface } from './dummy-interface';
 import { Dummy } from './dummy';
-import { Spinkit } from 'ng-http-loader/spinkits';
+import { Spinkit } from 'ng-http-loader';
 
 @Component({
     selector: 'app-root',

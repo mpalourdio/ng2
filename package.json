@@ -24,7 +24,7 @@
     "@fortawesome/fontawesome-free-regular": "^5.0.8",
     "@fortawesome/fontawesome-free-solid": "^5.0.8",
     "core-js": "^2.5.4",
-    "ng-http-loader": "^1.0.0",
+    "ng-http-loader": "^2.0.0",
     "rxjs": "^6.1.0",
     "zone.js": "^0.8.26"
   },
