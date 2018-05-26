@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/mpalourdio/ng2.svg?branch=master)](https://travis-ci.org/mpalourdio/ng2)
-[![Coverage Status](https://coveralls.io/repos/github/mpalourdio/ng2/badge.svg)](https://coveralls.io/github/mpalourdio/ng2)  
+[![Coverage Status](https://coveralls.io/repos/github/mpalourdio/ng2/badge.svg?branch=master](https://coveralls.io/github/mpalourdio/ng2?branch=master)  
 # Ng2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
