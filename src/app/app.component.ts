@@ -52,5 +52,5 @@ export class AppComponent implements OnInit, OnDestroy {
             this.inputTextBinded = this.inputText.getId();
             counter++;
         }, 1000);
-    };
+    }
 }
