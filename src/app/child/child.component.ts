@@ -1,7 +1,4 @@
-import {
-    AfterViewInit, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges,
-    ViewChild
-} from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { DummyInterface } from '../dummy-interface';
 import { ColorDirective } from '../color.directive';
 
@@ -18,8 +15,13 @@ export class ChildComponent implements OnChanges, AfterViewInit {
     @Input()
     doubleBindedChild;
 
+    private _doubleBindedChild2;
+
     @Output()
     doubleBindedChildChange = new EventEmitter<string>();
+
+    @Output()
+    doubleBindedChild2Change = new EventEmitter<string>();
 
     @ViewChild(ColorDirective)
     colorDirective: ColorDirective;
@@ -31,6 +33,20 @@ export class ChildComponent implements OnChanges, AfterViewInit {
     }
 
     emitNgModelChanges(event): void {
+        this.doubleBindedChildChange.emit(event);
+    }
+
+    @Input()
+    get doubleBindedChild2() {
+        return this._doubleBindedChild2;
+    }
+
+    set doubleBindedChild2(value) {
+        this._doubleBindedChild2 = value;
+        this.emitNgModel2Changes(value);
+    }
+
+    emitNgModel2Changes(event): void {
         this.doubleBindedChildChange.emit(event);
     }
 

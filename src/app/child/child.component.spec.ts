@@ -53,4 +53,15 @@ describe('ChildComponent', () => {
 
         component.emitNgModelChanges(inputEvent);
     }));
+
+
+    it('should correctly detect ng-model changes and emit notifications with getter/setter', async(() => {
+        const inputEvent = 'an input';
+
+        component.doubleBindedChild2Change.subscribe(
+            x => expect(x).toBe(inputEvent)
+        );
+
+        component.doubleBindedChild2 = inputEvent;
+    }));
 });
