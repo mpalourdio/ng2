@@ -8,6 +8,7 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
 import { ToUppercasePipe } from './to-uppercase.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { FortAwesomeModule } from '../fortawesome.module';
+import { SearchFilterComponent } from './search-filter/search-filter.component';
 
 @NgModule({
     declarations: [
@@ -15,6 +16,7 @@ import { FortAwesomeModule } from '../fortawesome.module';
         ChildComponent,
         ColorDirective,
         ToUppercasePipe,
+        SearchFilterComponent,
     ],
     imports: [
         BrowserModule,

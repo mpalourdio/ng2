@@ -1,9 +1,10 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, flush, TestBed, tick } from '@angular/core/testing';
 
 import { FormsModule } from '@angular/forms';
 import { ColorDirective } from '../color.directive';
 import { By } from '@angular/platform-browser';
 import { ChildComponent } from './child.component';
+import { SearchFilterComponent } from '../search-filter/search-filter.component';
 
 describe('ChildComponent', () => {
     let component: ChildComponent;
@@ -12,7 +13,7 @@ describe('ChildComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ChildComponent, ColorDirective],
+            declarations: [ChildComponent, ColorDirective, SearchFilterComponent],
             imports: [FormsModule],
         })
             .compileComponents();
@@ -64,4 +65,28 @@ describe('ChildComponent', () => {
 
         component.doubleBindedChild2 = inputEvent;
     }));
+
+    it('should filter the array of the child element', fakeAsync(() => {
+        tick(3001);
+        fixture.detectChanges();
+
+        const childValue = 'm';
+        dispatchInputEventOnElement('#filter-input', childValue);
+
+        const tableCell = fixture
+            .debugElement
+            .query(By.css('#mytable'))
+            .nativeElement;
+
+        expect(tableCell.rows[0].cells[0].innerHTML).toBe('mega');
+    }));
+
+    function dispatchInputEventOnElement(selector: string, value: string) {
+        const input = fixture.debugElement.query(By.css(selector)).nativeElement;
+        input.value = value;
+
+        input.dispatchEvent(new Event('input'));
+        fixture.detectChanges();
+        tick();
+    }
 });

@@ -7,6 +7,7 @@ import { ChildComponent } from './child/child.component';
 import { NgHttpLoaderModule } from 'ng-http-loader';
 import { ToUppercasePipe } from './to-uppercase.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchFilterComponent } from './search-filter/search-filter.component';
 
 describe('AppComponent', () => {
 
@@ -15,7 +16,7 @@ describe('AppComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [AppComponent, ChildComponent, ColorDirective, ToUppercasePipe],
+            declarations: [AppComponent, ChildComponent, SearchFilterComponent, ColorDirective, ToUppercasePipe],
             imports: [FormsModule, HttpClientModule, NgHttpLoaderModule],
         })
             .compileComponents();
