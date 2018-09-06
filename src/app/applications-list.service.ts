@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Observable, ReplaySubject } from 'rxjs';
-import { delay } from 'rxjs/operators';
+import { Observable, of, timer } from 'rxjs';
+import { mapTo, switchMap } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ApplicationsListService {
-    private _applicationsList: ReplaySubject<string[]> = new ReplaySubject<string[]>(1);
 
-    constructor() {
-        this._applicationsList.next(['office', 'vsstudio', 'mega']);
+    delay(delayMs) {
+        return source => source.pipe(switchMap(value => timer(delayMs).pipe(mapTo(value))));
     }
 
-    get applicationsList(): Observable<string[]> {
-        return this._applicationsList.asObservable().pipe(delay(3000));
+    applicationsList(): Observable<string[]> {
+        return of(['office', 'vsstudio', 'mega']).pipe(this.delay(2000));
     }
 }

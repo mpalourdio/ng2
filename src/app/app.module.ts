@@ -1,14 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
-import { ColorDirective } from './color.directive';
-import { ChildComponent } from './child/child.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgHttpLoaderModule } from 'ng-http-loader';
-import { ToUppercasePipe } from './to-uppercase.pipe';
-import { HttpClientModule } from '@angular/common/http';
 import { FortAwesomeModule } from '../fortawesome.module';
+import { AppComponent } from './app.component';
+import { ChildComponent } from './child/child.component';
+import { ColorDirective } from './color.directive';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
+import { ToUppercasePipe } from './to-uppercase.pipe';
 
 @NgModule({
     declarations: [

@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild } from '@angular/core';
-import { DummyInterface } from '../dummy-interface';
-import { ColorDirective } from '../color.directive';
 import { ApplicationsListService } from '../applications-list.service';
+import { ColorDirective } from '../color.directive';
+import { DummyInterface } from '../dummy-interface';
 
 @Component({
     selector: 'app-child',
@@ -31,9 +31,9 @@ export class ChildComponent implements OnChanges, AfterViewInit {
 
     color;
 
-    constructor(applicationsListService: ApplicationsListService) {
+    constructor(private applicationsListService: ApplicationsListService) {
         this.color = 'type a known html color';
-        applicationsListService.applicationsList.subscribe(l => this.applicationsList = l);
+        this.applicationsListService.applicationsList().subscribe(l => this.applicationsList = l);
     }
 
     emitNgModelChanges(event): void {

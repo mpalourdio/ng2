@@ -18,8 +18,8 @@ export class SearchFilterComponent {
     private appListBuffer: string[];
 
 
-    constructor(applicationsListService: ApplicationsListService) {
-        applicationsListService.applicationsList.subscribe(l => this.appListBuffer = l);
+    constructor(private applicationsListService: ApplicationsListService) {
+        this.applicationsListService.applicationsList().subscribe(l => this.appListBuffer = l);
     }
 
     set searchTerm(value) {
@@ -28,10 +28,7 @@ export class SearchFilterComponent {
     }
 
     private filterApplicationsList(searchTerm) {
-        this.applicationsList = this.appListBuffer.filter(a => {
-            return a.includes(searchTerm);
-        });
-
+        this.applicationsList = this.appListBuffer.filter(a => a.includes(searchTerm));
         this.applicationsListChange.emit(this.applicationsList);
     }
 }

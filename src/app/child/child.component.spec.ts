@@ -1,10 +1,10 @@
-import { async, ComponentFixture, fakeAsync, flush, TestBed, tick } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormsModule } from '@angular/forms';
-import { ColorDirective } from '../color.directive';
 import { By } from '@angular/platform-browser';
-import { ChildComponent } from './child.component';
+import { ColorDirective } from '../color.directive';
 import { SearchFilterComponent } from '../search-filter/search-filter.component';
+import { ChildComponent } from './child.component';
 
 describe('ChildComponent', () => {
     let component: ChildComponent;
@@ -65,10 +65,38 @@ describe('ChildComponent', () => {
 
         component.doubleBindedChild2 = inputEvent;
     }));
+});
 
-    it('should filter the array of the child element', fakeAsync(() => {
-        tick(3001);
+describe('ChildComponentWithJasmineClock', () => {
+    let component: ChildComponent;
+    let fixture: ComponentFixture<ChildComponent>;
+    let element;
+
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [ChildComponent, ColorDirective, SearchFilterComponent],
+            imports: [FormsModule],
+        })
+            .compileComponents();
+    }));
+
+    beforeEach(() => {
+        jasmine.clock().install();
+
+        fixture = TestBed.createComponent(ChildComponent);
+        component = fixture.componentInstance;
         fixture.detectChanges();
+
+        element = fixture.nativeElement; // to access DOM element
+    });
+
+    afterEach(() => {
+        jasmine.clock().uninstall();
+    });
+
+    // https://github.com/angular/angular/issues/10127
+    it('should filter the array of the child element', () => {
+        jasmine.clock().tick(2000);
 
         const childValue = 'm';
         dispatchInputEventOnElement('#filter-input', childValue);
@@ -78,8 +106,10 @@ describe('ChildComponent', () => {
             .query(By.css('#mytable'))
             .nativeElement;
 
+        jasmine.clock().tick(2000);
+
         expect(tableCell.rows[0].cells[0].innerHTML).toBe('mega');
-    }));
+    });
 
     function dispatchInputEventOnElement(selector: string, value: string) {
         const input = fixture.debugElement.query(By.css(selector)).nativeElement;
@@ -87,6 +117,5 @@ describe('ChildComponent', () => {
 
         input.dispatchEvent(new Event('input'));
         fixture.detectChanges();
-        tick();
     }
 });
