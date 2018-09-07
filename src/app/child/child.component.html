@@ -17,7 +17,7 @@
     <table id="mytable">
         <tr *ngFor="let application of applicationsList">
             <td>
-                <piam-fav-star [application]="application" [applicationsList]="applicationsList"></piam-fav-star>
+                <fav-star [application]="application" [applicationsList]="applicationsList"></fav-star>
                 {{application.name}} <span *ngIf="application.isFav">(faved !)</span>
             </td>
         </tr>

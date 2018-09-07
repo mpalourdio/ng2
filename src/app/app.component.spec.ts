@@ -8,6 +8,7 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
 import { ToUppercasePipe } from './to-uppercase.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
+import { FavStarComponent } from './fav-star/fav-star.component';
 
 describe('AppComponent', () => {
 
@@ -16,7 +17,7 @@ describe('AppComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [AppComponent, ChildComponent, SearchFilterComponent, ColorDirective, ToUppercasePipe],
+            declarations: [AppComponent, ChildComponent, SearchFilterComponent, ColorDirective, ToUppercasePipe, FavStarComponent],
             imports: [FormsModule, HttpClientModule, NgHttpLoaderModule],
         })
             .compileComponents();

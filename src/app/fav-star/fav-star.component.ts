@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'piam-fav-star',
+    selector: 'fav-star',
     templateUrl: './fav-star.component.html',
     styleUrls: ['./fav-star.component.scss']
 })
@@ -15,6 +15,5 @@ export class FavStarComponent {
 
     toggleFavorite(): void {
         this.application.isFav = !this.application.isFav;
-        console.log(this.application.isFav);
     }
 }

@@ -5,6 +5,7 @@ import { By } from '@angular/platform-browser';
 import { ColorDirective } from '../color.directive';
 import { SearchFilterComponent } from '../search-filter/search-filter.component';
 import { ChildComponent } from './child.component';
+import { FavStarComponent } from '../fav-star/fav-star.component';
 
 describe('ChildComponent', () => {
     let component: ChildComponent;
@@ -13,7 +14,7 @@ describe('ChildComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ChildComponent, ColorDirective, SearchFilterComponent],
+            declarations: [ChildComponent, ColorDirective, SearchFilterComponent, FavStarComponent],
             imports: [FormsModule],
         })
             .compileComponents();
@@ -74,7 +75,7 @@ describe('ChildComponentWithJasmineClock', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ChildComponent, ColorDirective, SearchFilterComponent],
+            declarations: [ChildComponent, ColorDirective, SearchFilterComponent, FavStarComponent],
             imports: [FormsModule],
         })
             .compileComponents();
@@ -108,7 +109,7 @@ describe('ChildComponentWithJasmineClock', () => {
 
         jasmine.clock().tick(2000);
 
-        expect(tableCell.rows[0].cells[0].innerHTML).toBe('mega');
+        expect(tableCell.rows[0].cells[0].innerHTML).toContain('mega');
     });
 
     function dispatchInputEventOnElement(selector: string, value: string) {
