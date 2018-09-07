@@ -12,6 +12,10 @@ export class ApplicationsListService {
     }
 
     applicationsList(): Observable<string[]> {
-        return of(['office', 'vsstudio', 'mega']).pipe(this.delay(2000));
+        return of([
+            {name: 'intellij', isFav: false},
+            {name: 'netbeans', isFav: false},
+            {name: 'mega', isFav: false}
+            ]).pipe(this.delay(2000));
     }
 }

@@ -9,6 +9,7 @@ import { ChildComponent } from './child/child.component';
 import { ColorDirective } from './color.directive';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { ToUppercasePipe } from './to-uppercase.pipe';
+import { FavStarComponent } from './fav-star/fav-star.component';
 
 @NgModule({
     declarations: [
@@ -17,6 +18,7 @@ import { ToUppercasePipe } from './to-uppercase.pipe';
         ColorDirective,
         ToUppercasePipe,
         SearchFilterComponent,
+        FavStarComponent,
     ],
     imports: [
         BrowserModule,

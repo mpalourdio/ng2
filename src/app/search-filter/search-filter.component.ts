@@ -28,7 +28,7 @@ export class SearchFilterComponent {
     }
 
     private filterApplicationsList(searchTerm) {
-        this.applicationsList = this.appListBuffer.filter(a => a.includes(searchTerm));
+        this.applicationsList = this.appListBuffer.filter((a: any) => a.name.includes(searchTerm));
         this.applicationsListChange.emit(this.applicationsList);
     }
 }

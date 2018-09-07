@@ -1,0 +1,15 @@
+
+<button
+    class="star"
+    [class.fav]="application.isFav"
+    (click)="toggleFavorite()"
+    title="Marquer cette application comme favorite">
+    <span *ngIf="application.isFav; then fav else notFav"></span>
+</button>
+
+<ng-template #fav >
+    &#9733;
+</ng-template>
+<ng-template #notFav>
+    &#9734;
+</ng-template>

@@ -10,7 +10,7 @@ import { DummyInterface } from '../dummy-interface';
 })
 export class ChildComponent implements OnChanges, AfterViewInit {
 
-    applicationsList: string[] = [];
+    applicationsList: any[] = [];
 
     @Input()
     bindingFromAppComponent: DummyInterface;

@@ -16,7 +16,11 @@
     <app-search-filter [(applicationsList)]="applicationsList"></app-search-filter>
     <table id="mytable">
         <tr *ngFor="let application of applicationsList">
-            <td>{{application}}</td>
+            <td>
+                <piam-fav-star [application]="application" [applicationsList]="applicationsList"></piam-fav-star>
+                {{application.name}} <span *ngIf="application.isFav">(faved !)</span>
+            </td>
         </tr>
     </table>
 </div>
+{{applicationsList | json}}
