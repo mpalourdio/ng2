@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import * as _orderBy from 'lodash/orderBy';
 
 @Component({
     selector: 'fav-star',
@@ -15,5 +16,7 @@ export class FavStarComponent {
 
     toggleFavorite(): void {
         this.application.isFav = !this.application.isFav;
+        const orderedApps = _orderBy(this.applicationsList, ['name']);
+        console.log(orderedApps);
     }
 }
