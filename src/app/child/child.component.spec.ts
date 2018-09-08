@@ -107,8 +107,6 @@ describe('ChildComponentWithJasmineClock', () => {
             .query(By.css('#mytable'))
             .nativeElement;
 
-        jasmine.clock().tick(2000);
-
         expect(tableCell.rows[0].cells[0].innerHTML).toContain('mega');
     });
 
