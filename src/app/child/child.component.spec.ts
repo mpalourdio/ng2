@@ -96,7 +96,7 @@ describe('ChildComponentWithJasmineClock', () => {
     });
 
     // https://github.com/angular/angular/issues/10127
-    it('should filter the array of the child element', () => {
+    it('should filter the array of applications', () => {
         jasmine.clock().tick(2000);
 
         const childValue = 'm';
@@ -108,6 +108,21 @@ describe('ChildComponentWithJasmineClock', () => {
             .nativeElement;
 
         expect(tableCell.rows[0].cells[0].innerHTML).toContain('mega');
+    });
+
+    // https://github.com/angular/angular/issues/10127
+    it('should order the array of applications', () => {
+        jasmine.clock().tick(2000);
+        fixture.detectChanges();
+
+        const tableCell = fixture
+            .debugElement
+            .query(By.css('#mytable'))
+            .nativeElement;
+
+        fixture.detectChanges();
+
+        expect(tableCell.rows[0].cells[0].innerHTML).toContain('intellij');
     });
 
     function dispatchInputEventOnElement(selector: string, value: string) {
