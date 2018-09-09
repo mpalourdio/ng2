@@ -22,4 +22,10 @@ describe('FavStarComponent', () => {
     it('should create', () => {
         expect(component).toBeTruthy();
     });
+
+    it('should toggle favorite', () => {
+        component.application = {isFav: false};
+        component.toggleFavorite();
+        expect(component.application.isFav).toBeTruthy();
+    });
 });
