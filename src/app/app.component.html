@@ -1,25 +1,7 @@
 <div id="first">
     <h1>AppComponent</h1>
-    <ng-http-loader [spinner]="spinkit.skWanderingCubes" [backgroundColor]="'#ff0000'"></ng-http-loader>
-    <div><span id="title">{{title}}</span><br>
-        <img src="assets/1/2/index.png">
-    </div>
-
     <div>
-        <input type="text" id="first-binding" [(ngModel)]="inputTextBinded"/>
-        {{inputText.getId()}}
-        <span *ngIf="inputText.getId() <= 1">second</span>
-        <span *ngIf="inputText.getId() > 1">seconds</span>
-        <i class="fa fa-caret-square-o-down"></i>
-    </div>
-
-    <div>
-        <app-child
-            [bindingFromAppComponent]="inputText"
-            [(doubleBindedChild)]="doubleBindedParent"
-            [(doubleBindedChild2)]="doubleBindedParent"
-        >
-        </app-child>
+        <span id="title">{{title}}</span><br>
     </div>
 
     <div>
@@ -28,10 +10,9 @@
     </div>
 
     <div>
-        <small>Selected values : {{selectedValues}}</small>
-        <br>
-        <select multiple [(ngModel)]="selectedValues" name="multiselect">
-            <option *ngFor="let item of availableValues" [value]="item.value">{{item.label}}</option>
-        </select>
+        <app-child
+            [(doubleBindedChild)]="doubleBindedParent"
+            [(doubleBindedChild2)]="doubleBindedParent">
+        </app-child>
     </div>
 </div>

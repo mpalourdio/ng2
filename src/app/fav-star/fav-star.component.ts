@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import * as _orderBy from 'lodash/orderBy';
 
 @Component({
@@ -11,12 +11,18 @@ export class FavStarComponent {
     @Input()
     public application;
 
+    private _applicationsList;
+
+    @Output()
+    private applicationsListChange = new EventEmitter<any>();
+
     @Input()
-    public applicationsList;
+    set applicationsList(value) {
+        this._applicationsList = _orderBy(value, ['name']);
+        this.applicationsListChange.emit(this._applicationsList);
+    }
 
     toggleFavorite(): void {
         this.application.isFav = !this.application.isFav;
-        const orderedApps = _orderBy(this.applicationsList, ['name']);
-        console.log(orderedApps);
     }
 }

@@ -1,19 +1,15 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { ApplicationsListService } from '../applications-list.service';
 import { ColorDirective } from '../color.directive';
-import { DummyInterface } from '../dummy-interface';
 
 @Component({
     selector: 'app-child',
     templateUrl: './child.component.html',
     styleUrls: ['./child.component.scss']
 })
-export class ChildComponent implements OnChanges, AfterViewInit {
+export class ChildComponent implements OnChanges {
 
     applicationsList: any[] = [];
-
-    @Input()
-    bindingFromAppComponent: DummyInterface;
 
     @Input()
     doubleBindedChild;
@@ -29,11 +25,12 @@ export class ChildComponent implements OnChanges, AfterViewInit {
     @ViewChild(ColorDirective)
     colorDirective: ColorDirective;
 
-    color;
+    color = 'Enter an existing HTML color';
 
     constructor(private applicationsListService: ApplicationsListService) {
-        this.color = 'type a known html color';
-        this.applicationsListService.applicationsList().subscribe(l => this.applicationsList = l);
+        this.applicationsListService
+            .applicationsList()
+            .subscribe(l => this.applicationsList = l);
     }
 
     emitNgModelChanges(event): void {
@@ -56,9 +53,5 @@ export class ChildComponent implements OnChanges, AfterViewInit {
 
     ngOnChanges(changes: SimpleChanges): void {
         console.log('this only works when triggered from parent');
-    }
-
-    ngAfterViewInit() {
-        console.log(this.colorDirective);
     }
 }

@@ -35,21 +35,6 @@ describe('AppComponent', () => {
         expect(component.title).toBe('Hello World!');
     });
 
-    it('should bind value to the #first-binding input', fakeAsync(() => {
-        const inputTextBindedValue = 5;
-        component.inputTextBinded = inputTextBindedValue;
-
-        fixture.detectChanges();
-        tick();
-
-        const input = fixture
-            .debugElement
-            .query(By.css('#first-binding'))
-            .nativeElement;
-
-        expect(parseInt(input.value, 10)).toBe(inputTextBindedValue);
-    }));
-
     it('should correctly double bind', fakeAsync(() => {
         const childValue = 'changed';
         dispatchNgModelEventOnElement('#double-binded-child', childValue);

@@ -5,7 +5,6 @@
     <h1>ChildComponent</h1>
     <p appColor [color]="color">
         <input type="text" [(ngModel)]="color">
-        {{bindingFromAppComponent | json}}
     </p>
     <input type="text" id="double-binded-child" [ngModel]="doubleBindedChild" (ngModelChange)="emitNgModelChanges($event)">
     <br>
@@ -17,11 +16,11 @@
     <table id="mytable">
         <tr *ngFor="let application of applicationsList">
             <td>
-                <fav-star [application]="application" [applicationsList]="applicationsList">
+                <fav-star [application]="application" [(applicationsList)]="applicationsList">
                     {{application.name}} <span *ngIf="application.isFav">(faved !)</span>
                 </fav-star>
             </td>
         </tr>
     </table>
+    {{applicationsList | json}}
 </div>
-{{applicationsList | json}}
