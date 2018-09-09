@@ -9,18 +9,18 @@ import { ColorDirective } from '../color.directive';
 })
 export class ChildComponent implements OnChanges {
 
-    applicationsList: any[] = [];
+    public applicationsList: any[] = [];
 
     @Input()
-    doubleBindedChild;
+    public doubleBindedChild;
 
     private _doubleBindedChild2;
 
     @Output()
-    doubleBindedChildChange = new EventEmitter<string>();
+    public doubleBindedChildChange = new EventEmitter<string>();
 
     @Output()
-    doubleBindedChild2Change = new EventEmitter<string>();
+    public doubleBindedChild2Change = new EventEmitter<string>();
 
     @ViewChild(ColorDirective)
     colorDirective: ColorDirective;
@@ -47,7 +47,7 @@ export class ChildComponent implements OnChanges {
         this.emitNgModel2Changes(value);
     }
 
-    emitNgModel2Changes(event): void {
+    private emitNgModel2Changes(event): void {
         this.doubleBindedChildChange.emit(event);
     }
 

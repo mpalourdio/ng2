@@ -13,13 +13,13 @@ export class SearchFilterComponent {
     public applicationsList: string[];
 
     @Output()
-    applicationsListChange = new EventEmitter<string[]>();
+    private applicationsListChange = new EventEmitter<string[]>();
 
-    private appListBuffer: string[];
+    private _appListBuffer: string[];
 
 
     constructor(private applicationsListService: ApplicationsListService) {
-        this.applicationsListService.applicationsList().subscribe(l => this.appListBuffer = l);
+        this.applicationsListService.applicationsList().subscribe(l => this._appListBuffer = l);
     }
 
     set searchTerm(value) {
@@ -28,7 +28,7 @@ export class SearchFilterComponent {
     }
 
     private filterApplicationsList(searchTerm) {
-        this.applicationsList = this.appListBuffer.filter((a: any) => a.name.includes(searchTerm));
+        this.applicationsList = this._appListBuffer.filter((a: any) => a.name.includes(searchTerm));
         this.applicationsListChange.emit(this.applicationsList);
     }
 }
