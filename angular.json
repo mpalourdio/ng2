@@ -78,7 +78,7 @@
             "watch": false,
             "sourceMap": true,
             "styles": [
-              "styles.scss"
+              "src/styles.scss"
             ],
             "scripts": [],
             "assets": [
