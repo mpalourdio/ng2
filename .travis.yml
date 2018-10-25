@@ -10,15 +10,15 @@ node_js:
   - node
 
 before_install:
-  - if [[ $TRAVIS_OS_NAME != "windows" ]]; then curl -o- -L https://yarnpkg.com/install.sh | bash -s; fi
-  - if [[ $TRAVIS_OS_NAME != "windows" ]]; then export PATH=$HOME/.yarn/bin:$PATH; fi
+  - if [[ "$TRAVIS_OS_NAME" != "windows" ]]; then curl -o- -L https://yarnpkg.com/install.sh | bash -s; fi
+  - if [[ "$TRAVIS_OS_NAME" != "windows" ]]; then export PATH=$HOME/.yarn/bin:$PATH; fi
 
 script:
   - yarn lint
   - yarn test --code-coverage
 
 after_script:
-  - if [[ $TRAVIS_OS_NAME != "windows" ]]; then cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js; fi
+  - if [[ "$TRAVIS_OS_NAME" != "windows" ]]; then cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js; fi
 
 allow_failures:
   - os: windows
