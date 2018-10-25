@@ -13,8 +13,12 @@ matrix:
       node_js: node
     - os: osx
       node_js: lts/*
+      addons:
+        firefox: "latest"
     - os: osx
       node_js: node
+      addons:
+        firefox: "latest"
 
   allow_failures:
     - os: windows
