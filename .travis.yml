@@ -14,11 +14,13 @@ matrix:
     - os: osx
       node_js: lts/*
       addons:
-        firefox: "latest"
+        firefox: latest
+        chrome: stable
     - os: osx
       node_js: node
       addons:
-        firefox: "latest"
+        firefox: latest
+        chrome: stable
 
   allow_failures:
     - os: windows
