@@ -5,15 +5,15 @@ matrix:
     - os: linux
       node_js: lts/*
     - os: linux
-      node_js: node/*
+      node_js: node
     - os: windows
       node_js: lts/*
     - os: windows
-      node_js: node/*
+      node_js: node
     - os: osx
       node_js: lts/*
     - os: osx
-      node_js: node/*
+      node_js: node
 
   allow_failures:
     - os: windows
