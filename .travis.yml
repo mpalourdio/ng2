@@ -28,4 +28,4 @@ script:
   - yarn test --code-coverage
 
 after_script:
-  - if [[ "$TRAVIS_OS_NAME" != "windows" ]]; then cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js; fi
+  - if [[ "$TRAVIS_OS_NAME" = "linux" ]]; then cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js; fi
