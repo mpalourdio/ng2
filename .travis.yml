@@ -9,10 +9,10 @@ matrix:
       node_js: node
     - os: windows
       node_js: lts/*
-      env: FIREFOX_BIN="C:\Program Files\Mozilla Firefox"
+      env: FIREFOX_BIN="C:\Program Files\Mozilla Firefox\Firefox.exe"
     - os: windows
       node_js: node
-      env: FIREFOX_BIN="C:\Program Files\Mozilla Firefox"
+      env: FIREFOX_BIN="C:\Program Files\Mozilla Firefox\Firefox.exe"
     - os: osx
       node_js: lts/*
       addons:
