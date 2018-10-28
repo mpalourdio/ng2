@@ -32,10 +32,6 @@ module.exports = function (config) {
         base: 'Firefox',
         flags: ['-headless'],
       },
-      ChromiumHeadlessNoSandbox: {
-        base: 'ChromiumHeadless',
-        flags: ['--no-sandbox']
-      }
     },
     singleRun: false,
     browserNoActivityTimeout: 100000
