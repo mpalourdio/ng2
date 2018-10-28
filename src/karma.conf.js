@@ -30,8 +30,12 @@ module.exports = function (config) {
     customLaunchers: {
       FirefoxHeadless: {
         base: 'Firefox',
-        flags: [ '-headless' ],
+        flags: ['-headless'],
       },
+      ChromiumHeadlessNoSandbox: {
+        base: 'ChromiumHeadless',
+        flags: ['--no-sandbox']
+      }
     },
     singleRun: false,
     browserNoActivityTimeout: 100000
