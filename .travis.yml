@@ -15,12 +15,16 @@ matrix:
       node_js: lts/*
       addons:
         firefox: latest
-        chrome: stable
+        homebrew:
+          packages:
+          - chromium
     - os: osx
       node_js: node
       addons:
         firefox: latest
-        chrome: stable
+        homebrew:
+          packages:
+          - chromium
 
   allow_failures:
     - os: windows
