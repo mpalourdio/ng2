@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import fontawesome from '@fortawesome/fontawesome';
-import packr from '@fortawesome/fontawesome-free-regular';
-import packs from '@fortawesome/fontawesome-free-solid';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { dom, library } from '@fortawesome/fontawesome-svg-core';
 
 @NgModule()
 export class FortAwesomeModule {
     constructor() {
-        fontawesome.library.add(packr);
-        fontawesome.library.add(packs);
+        library.add(far, fas);
+        dom.watch();
     }
 }
