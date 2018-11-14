@@ -6,6 +6,7 @@ import { ColorDirective } from '../color.directive';
 import { SearchFilterComponent } from '../search-filter/search-filter.component';
 import { ChildComponent } from './child.component';
 import { FavStarComponent } from '../fav-star/fav-star.component';
+import { CheckboxComponent } from '../checkbox/checkbox.component';
 
 describe('ChildComponent', () => {
     let component: ChildComponent;
@@ -14,7 +15,7 @@ describe('ChildComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ChildComponent, ColorDirective, SearchFilterComponent, FavStarComponent],
+            declarations: [ChildComponent, ColorDirective, SearchFilterComponent, FavStarComponent, CheckboxComponent],
             imports: [FormsModule],
         })
             .compileComponents();
@@ -75,7 +76,7 @@ describe('ChildComponentWithJasmineClock', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ChildComponent, ColorDirective, SearchFilterComponent, FavStarComponent],
+            declarations: [ChildComponent, ColorDirective, SearchFilterComponent, FavStarComponent, CheckboxComponent],
             imports: [FormsModule],
         })
             .compileComponents();

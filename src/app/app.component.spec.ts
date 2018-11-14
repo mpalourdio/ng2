@@ -9,6 +9,7 @@ import { ToUppercasePipe } from './to-uppercase.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { FavStarComponent } from './fav-star/fav-star.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 describe('AppComponent', () => {
 
@@ -17,7 +18,7 @@ describe('AppComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [AppComponent, ChildComponent, SearchFilterComponent, ColorDirective, ToUppercasePipe, FavStarComponent],
+            declarations: [AppComponent, ChildComponent, SearchFilterComponent, ColorDirective, ToUppercasePipe, FavStarComponent, CheckboxComponent],
             imports: [FormsModule, HttpClientModule, NgHttpLoaderModule],
         })
             .compileComponents();

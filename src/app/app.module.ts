@@ -10,6 +10,7 @@ import { ColorDirective } from './color.directive';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { ToUppercasePipe } from './to-uppercase.pipe';
 import { FavStarComponent } from './fav-star/fav-star.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { FavStarComponent } from './fav-star/fav-star.component';
         ToUppercasePipe,
         SearchFilterComponent,
         FavStarComponent,
+        CheckboxComponent,
     ],
     imports: [
         BrowserModule,

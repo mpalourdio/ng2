@@ -1,0 +1,21 @@
+<div>
+    <div>
+        'sr-only checkbox' -> the label (&#9829;) is outlined when the sr-only checkbox has the focus<br>
+        Press 'space' once it has the focus to check/uncheck
+    </div>
+    <label for="checkbox"
+           id="checkbox-label"
+           class="heart"
+           [ngClass]="{'has-focus': hasFocus, 'is-checked': isChecked, 'is-not-checked': !isChecked}">
+        &#9829;
+    </label>
+
+    <input type="checkbox"
+           name="checkbox"
+           id="checkbox"
+           (focus)="toggleLabelClass()"
+           (focusout)="toggleLabelClass()"
+           [(ngModel)]="isChecked"
+           class="sr-only">
+</div>
+Is checkbox checked ? : {{!!isChecked}}

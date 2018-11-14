@@ -1,0 +1,31 @@
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+$is-checked: #cccc;
+$is-not-checked: #ff0000;
+
+.heart {
+    font-size: 1.5rem;
+    color: $is-checked;
+    cursor: pointer;
+
+    &.has-focus {
+        outline: 1px solid red;
+    }
+
+    &.is-checked {
+        color: $is-not-checked;
+    }
+
+    &:hover {
+        color: $is-not-checked;
+    }
+}
