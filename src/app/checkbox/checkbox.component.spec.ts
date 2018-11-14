@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CheckboxComponent } from './checkbox.component';
 import { By } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { DebugElement } from '@angular/core';
 
 describe('CheckboxComponent', () => {
     let component: CheckboxComponent;
@@ -29,7 +30,7 @@ describe('CheckboxComponent', () => {
         component.isChecked = true;
         fixture.detectChanges();
 
-        const heart = fixture
+        const heart: HTMLElement = fixture
             .debugElement
             .query(By.css('.heart'))
             .nativeElement;
@@ -51,7 +52,7 @@ describe('CheckboxComponent', () => {
             .query(By.css('.heart'))
             .nativeElement;
 
-        const checkbox = fixture
+        const checkbox: DebugElement = fixture
             .debugElement
             .query(By.css('#checkbox'));
 
