@@ -51,19 +51,17 @@ describe('CheckboxComponent', () => {
             .query(By.css('.heart'))
             .nativeElement;
 
-        const checkbox: HTMLElement = fixture
+        const checkbox = fixture
             .debugElement
-            .query(By.css('#checkbox'))
-            .nativeElement;
+            .query(By.css('#checkbox'));
 
-        checkbox.focus();
-
+        checkbox.triggerEventHandler('focus', null);
         fixture.detectChanges();
 
         expect(heart.className).toContain('has-focus');
         expect(heart.className).toContain('is-not-checked');
 
-        checkbox.blur();
+        checkbox.triggerEventHandler('focusout', null);
         fixture.detectChanges();
 
         expect(heart.className).not.toContain('has-focus');
