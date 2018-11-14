@@ -18,7 +18,15 @@ describe('AppComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [AppComponent, ChildComponent, SearchFilterComponent, ColorDirective, ToUppercasePipe, FavStarComponent, CheckboxComponent],
+            declarations: [
+                AppComponent,
+                ChildComponent,
+                SearchFilterComponent,
+                ColorDirective,
+                ToUppercasePipe,
+                FavStarComponent,
+                CheckboxComponent
+            ],
             imports: [FormsModule, HttpClientModule, NgHttpLoaderModule],
         })
             .compileComponents();
