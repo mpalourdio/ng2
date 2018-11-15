@@ -17,6 +17,6 @@ export class ApplicationsListService {
             {name: 'mega', isFav: false},
             {name: 'intellij', isFav: false}
         ])
-            .pipe(this.delay(2000));
+            .pipe(this.delay(5));
     }
 }
