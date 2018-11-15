@@ -62,7 +62,7 @@ describe('CheckboxComponent', () => {
         expect(heart.className).toContain('has-focus');
         expect(heart.className).toContain('is-not-checked');
 
-        checkbox.triggerEventHandler('focusout', null);
+        checkbox.triggerEventHandler('blur', null);
         fixture.detectChanges();
 
         expect(heart.className).not.toContain('has-focus');
