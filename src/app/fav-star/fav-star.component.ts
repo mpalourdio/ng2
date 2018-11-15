@@ -18,11 +18,16 @@ export class FavStarComponent {
 
     @Input()
     set applicationsList(value) {
-        this._applicationsList = _orderBy(value, ['name']);
+        this._applicationsList = _orderBy(value, ['isFav'], ['desc']);
         this.applicationsListChange.emit(this._applicationsList);
+    }
+
+    get applicationsList() {
+        return this._applicationsList;
     }
 
     toggleFavorite(): void {
         this.application.isFav = !this.application.isFav;
+        this.applicationsList = this._applicationsList;
     }
 }
