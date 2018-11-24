@@ -26,7 +26,7 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
         BrowserModule,
         FormsModule,
         HttpClientModule,
-        NgHttpLoaderModule,
+        NgHttpLoaderModule.forRoot(),
         FortAwesomeModule,
     ],
     providers: [],
