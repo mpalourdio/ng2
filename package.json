@@ -26,7 +26,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.4.2",
     "core-js": "^2.5.4",
     "lodash": "^4.17.10",
-    "ng-http-loader": "^4.0.0",
+    "ng-http-loader": "^5.0.0",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },
