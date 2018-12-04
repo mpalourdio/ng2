@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { FavStarComponent } from './fav-star/fav-star.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
+import { IntlTelInputComponent } from './intl-tel-input/intl-tel-input.component';
 
 describe('AppComponent', () => {
 
@@ -25,7 +26,8 @@ describe('AppComponent', () => {
                 ColorDirective,
                 ToUppercasePipe,
                 FavStarComponent,
-                CheckboxComponent
+                CheckboxComponent,
+                IntlTelInputComponent,
             ],
             imports: [FormsModule, HttpClientModule, NgHttpLoaderModule],
         })

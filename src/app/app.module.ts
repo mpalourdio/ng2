@@ -11,6 +11,7 @@ import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { ToUppercasePipe } from './to-uppercase.pipe';
 import { FavStarComponent } from './fav-star/fav-star.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
+import { IntlTelInputComponent } from './intl-tel-input/intl-tel-input.component';
 
 @NgModule({
     declarations: [
@@ -21,6 +22,7 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
         SearchFilterComponent,
         FavStarComponent,
         CheckboxComponent,
+        IntlTelInputComponent,
     ],
     imports: [
         BrowserModule,

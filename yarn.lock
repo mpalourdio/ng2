@@ -3428,6 +3428,11 @@ interpret@^1.0.0:
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.1.0.tgz#7ed1b1410c6a0e0f78cf95d3b8440c63f78b8614"
   integrity sha1-ftGxQQxqDg94z5XTuEQMY/eLhhQ=
 
+intl-tel-input@^14.0.6:
+  version "14.0.6"
+  resolved "https://registry.yarnpkg.com/intl-tel-input/-/intl-tel-input-14.0.6.tgz#ee10689a9b91e0df720d8d59fb0e6e7d35ee6d78"
+  integrity sha512-jfEy3d2Hfymxd072TNZQjQrSXAlOb0xBe+QgkoFzEde/gdEbNbPZTI3JquCmyTqHdrUwLwAEMPgJBNPO3BTqSg==
+
 invariant@^2.2.2:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"

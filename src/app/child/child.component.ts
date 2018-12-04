@@ -25,6 +25,8 @@ export class ChildComponent implements OnChanges {
     @ViewChild(ColorDirective)
     colorDirective: ColorDirective;
 
+    public E164PhoneNumber: string;
+
     color = 'Enter an existing HTML color';
 
     constructor(private applicationsListService: ApplicationsListService) {
