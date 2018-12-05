@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IntlTelInputComponent } from './intl-tel-input.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 describe('IntlTelInputComponent', () => {
     let component: IntlTelInputComponent;
@@ -11,6 +11,7 @@ describe('IntlTelInputComponent', () => {
         TestBed.configureTestingModule({
             declarations: [IntlTelInputComponent],
             imports: [FormsModule],
+            providers: [NgForm]
         })
             .compileComponents();
     }));
