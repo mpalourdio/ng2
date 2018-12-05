@@ -1,12 +1,14 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import intlTelInput from 'intl-tel-input/build/js/intlTelInput';
+import { ControlContainer, NgForm } from '@angular/forms';
 
 @Component({
     selector: 'intl-tel-input',
     templateUrl: './intl-tel-input.component.html',
-    styleUrls: ['./intl-tel-input.component.scss']
+    styleUrls: ['./intl-tel-input.component.scss'],
+    viewProviders: [{provide: ControlContainer, useExisting: NgForm}]
 })
-export class IntlTelInputComponent implements OnInit {
+export class IntlTelInputComponent implements AfterViewInit {
 
     @Input()
     public E164PhoneNumber: string;
@@ -21,7 +23,7 @@ export class IntlTelInputComponent implements OnInit {
     private _phoneNumber;
     private intlTelInput: any;
 
-    ngOnInit() {
+    ngAfterViewInit() {
         const phoneElement = this.inputElement.nativeElement;
         const options = {
             localizedCountries: {ch: 'Suisse'},

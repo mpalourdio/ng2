@@ -12,7 +12,11 @@
 </div>
 
 <hr>
-<intl-tel-input [(E164PhoneNumber)]="E164PhoneNumber"></intl-tel-input> ==> Valid ? : {{!!E164PhoneNumber}}, {{E164PhoneNumber}}
+<form #form="ngForm">
+    <input name="inputtext" [(ngModel)]="inputTextInForm" required="required"><br>
+    <intl-tel-input [(E164PhoneNumber)]="E164PhoneNumber"></intl-tel-input> ==> Valid ? : {{!!E164PhoneNumber}}, {{E164PhoneNumber}}
+</form>
+{{form.value | json}} {{form.valid | json}}
 <hr>
 
 <app-checkbox></app-checkbox>

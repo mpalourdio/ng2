@@ -1,3 +1,9 @@
 <label for="phone"></label>
-<input type="tel" id="phone" name="phone" [(ngModel)]="phoneNumber" #intlTelInput (countrychange)="i18nizePhoneNumber($event)">
+<input type="text"
+       id="phone"
+       name="phone"
+       required="required"
+       [(ngModel)]="phoneNumber"
+       (countrychange)="i18nizePhoneNumber($event)"
+       #intlTelInput>
 

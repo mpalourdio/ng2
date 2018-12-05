@@ -28,6 +28,7 @@ export class ChildComponent implements OnChanges {
     public E164PhoneNumber: string;
 
     color = 'Enter an existing HTML color';
+    inputTextInForm: string;
 
     constructor(private applicationsListService: ApplicationsListService) {
         this.applicationsListService
