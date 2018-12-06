@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { IntlTelInputComponent } from './intl-tel-input.component';
 import { FormsModule, NgForm } from '@angular/forms';
 
