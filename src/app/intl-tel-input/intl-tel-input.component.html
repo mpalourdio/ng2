@@ -1,9 +1,12 @@
-<label for="phone"></label>
-<input type="text"
-       id="phone"
-       name="phone"
-       required="required"
-       [(ngModel)]="phoneNumber"
-       (countrychange)="i18nizePhoneNumber()"
-       #intlTelInput>
+<label for="phoneNumber"></label>
+<input
+    id="phoneNumber"
+    name="phoneNumber"
+    class="form-control"
+    autocomplete="off"
+    required="required"
+    type="text"
+    [(ngModel)]="phoneNumber"
+    #intlTelInput
+    (countrychange)="i18nizePhoneNumber()">
 
