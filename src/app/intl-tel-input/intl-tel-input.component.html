@@ -1,12 +1,15 @@
-<label for="phoneNumber"></label>
+<label [attr.for]="name" *ngIf="label && name">
+    {{label}}
+</label>
 <input
-    id="phoneNumber"
-    name="phoneNumber"
-    class="form-control"
-    autocomplete="off"
-    required="required"
     type="text"
+    [ngClass]="cssClass"
+    [attr.id]="name"
+    [attr.name]="name"
+    [name]="name"
+    [attr.aria-required]="required || null"
+    [attr.required]="required ? 'required' : null"
     [(ngModel)]="phoneNumber"
-    #intlTelInput
-    (countrychange)="i18nizePhoneNumber()">
+    (countrychange)="i18nizePhoneNumber()"
+    #intlTelInput>
 

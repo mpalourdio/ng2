@@ -17,6 +17,18 @@ export class IntlTelInputComponent implements AfterViewInit {
     @Input()
     public countryCodes: string[] = [];
 
+    @Input()
+    public label: string;
+
+    @Input()
+    public name = 'intl-tel-input-name';
+
+    @Input()
+    public required: boolean;
+
+    @Input()
+    cssClass: string;
+
     @Output()
     private E164PhoneNumberChange = new EventEmitter<string>();
 

@@ -14,7 +14,12 @@
 <hr>
 <form #form="ngForm">
     <input name="inputtext" [(ngModel)]="inputTextInForm" required="required"><br>
-    <intl-tel-input [countryCodes]="['fr','ch']" [(E164PhoneNumber)]="E164PhoneNumber"></intl-tel-input> ==> Valid ? : {{!!E164PhoneNumber}}, {{E164PhoneNumber}}
+    <intl-tel-input
+        [cssClass]="'form-control'"
+        [required]="true"
+        [countryCodes]="['fr','ch']"
+        [(E164PhoneNumber)]="E164PhoneNumber"></intl-tel-input>
+    ==> Valid ? : {{!!E164PhoneNumber}}, {{E164PhoneNumber}}
 </form>
 {{form.value | json}} {{form.valid | json}}
 <hr>
