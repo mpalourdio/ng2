@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
-import intlTelInput from 'intl-tel-input/build/js/intlTelInput';
+import intlTelInput from 'intl-tel-input';
 import { ControlContainer, NgForm } from '@angular/forms';
 
 @Component({
