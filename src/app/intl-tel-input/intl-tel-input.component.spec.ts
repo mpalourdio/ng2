@@ -122,14 +122,14 @@ describe('IntlTelInputComponent', () => {
 
         fixture.detectChanges();
 
-        const element: HTMLElement = fixture
+        const element = fixture
             .debugElement
             .query(By.css('#intl-tel-input-name'))
-            .parent
-            .nativeElement;
+            .nativeElement
+            .parentNode
+            .querySelector('.preferred');
 
-        const preferredCountryElement = element.getElementsByClassName('preferred');
-        expect(preferredCountryElement.item(0).getAttribute('data-country-code')).toBe(component.countryCodes[0]);
+        expect(element.getAttribute('data-country-code')).toBe(component.countryCodes[0]);
     });
 
     it('should be possible to set localizedCountries option', () => {
@@ -142,20 +142,13 @@ describe('IntlTelInputComponent', () => {
 
         fixture.detectChanges();
 
-        const element: HTMLElement = fixture
+        const element = fixture
             .debugElement
             .query(By.css('#intl-tel-input-name'))
-            .parent
-            .nativeElement;
+            .nativeElement
+            .parentNode
+            .querySelector('.country-name');
 
-        const preferredCountryElement = element.getElementsByClassName('preferred');
-        console.log();
-        expect(
-            preferredCountryElement
-                .item(0)
-                .getElementsByClassName('country-name')[0]
-                .innerHTML
-        )
-            .toBe(localizedCountryName);
+        expect(element.innerHTML).toBe(localizedCountryName);
     });
 });
