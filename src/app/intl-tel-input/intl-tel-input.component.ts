@@ -35,7 +35,7 @@ export class IntlTelInputComponent implements AfterViewInit {
     @ViewChild('intlTelInput')
     public inputElement: ElementRef;
 
-    private _phoneNumber;
+    private _phoneNumber: string;
     private _intlTelInput: any;
 
     ngAfterViewInit(): void {
@@ -64,7 +64,7 @@ export class IntlTelInputComponent implements AfterViewInit {
         return this._intlTelInput;
     }
 
-    get phoneNumber(): any {
+    get phoneNumber(): string {
         return this._phoneNumber;
     }
 
