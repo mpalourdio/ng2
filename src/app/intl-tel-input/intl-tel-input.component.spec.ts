@@ -92,6 +92,7 @@ describe('IntlTelInputComponent', () => {
             .query(By.css('input'))
             .nativeElement;
 
+        expect(element.getAttribute('name')).toBe(component.name);
         expect(element.getAttribute('name')).toBe(element.getAttribute('id'));
     });
 
