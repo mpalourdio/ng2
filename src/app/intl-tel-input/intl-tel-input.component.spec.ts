@@ -33,14 +33,20 @@ describe('IntlTelInputComponent', () => {
     });
 
     it('should convert phone number to E164 format', () => {
+        component.preferredCountries = ['ch'];
         component.countryCodes = ['ch', 'fr'];
+        component.ngAfterViewInit();
+
         component.phoneNumber = '0797703808';
 
         expect(component.E164PhoneNumber).toBe('+41797703808');
     });
 
-    it('should try to re-set E164 phone number on countryChange', () => {
+    it('should re-set E164 phone number on countryChange', () => {
+        component.preferredCountries = ['ch'];
         component.countryCodes = ['ch', 'fr'];
+        component.ngAfterViewInit();
+
         component.phoneNumber = '0797703808';
 
         expect(component.E164PhoneNumber).toBe('+41797703808');
@@ -107,5 +113,49 @@ describe('IntlTelInputComponent', () => {
             .nativeElement;
 
         expect(element.className).toContain(cssClass);
+    });
+
+    it('should be possible to set preferredCountries option', () => {
+        component.preferredCountries = ['ch'];
+        component.countryCodes = ['ch'];
+        component.ngAfterViewInit();
+
+        fixture.detectChanges();
+
+        const element: HTMLElement = fixture
+            .debugElement
+            .query(By.css('#intl-tel-input-name'))
+            .parent
+            .nativeElement;
+
+        const preferredCountryElement = element.getElementsByClassName('preferred');
+        expect(preferredCountryElement.item(0).getAttribute('data-country-code')).toBe(component.countryCodes[0]);
+    });
+
+    it('should be possible to set localizedCountries option', () => {
+        const localizedCountryName = 'Suisse';
+
+        component.preferredCountries = ['ch'];
+        component.localizedCountries = { ch: localizedCountryName };
+        component.countryCodes = ['ch'];
+        component.ngAfterViewInit();
+
+        fixture.detectChanges();
+
+        const element: HTMLElement = fixture
+            .debugElement
+            .query(By.css('#intl-tel-input-name'))
+            .parent
+            .nativeElement;
+
+        const preferredCountryElement = element.getElementsByClassName('preferred');
+        console.log();
+        expect(
+            preferredCountryElement
+                .item(0)
+                .getElementsByClassName('country-name')[0]
+                .innerHTML
+        )
+            .toBe(localizedCountryName);
     });
 });

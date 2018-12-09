@@ -27,7 +27,13 @@ export class IntlTelInputComponent implements AfterViewInit {
     public required: boolean;
 
     @Input()
-    cssClass: string;
+    public preferredCountries: string[] = [];
+
+    @Input()
+    public localizedCountries: any = {};
+
+    @Input()
+    public cssClass: string;
 
     @Output()
     private E164PhoneNumberChange = new EventEmitter<string>();
@@ -43,8 +49,8 @@ export class IntlTelInputComponent implements AfterViewInit {
         const options = {
             nationalMode: true,
             onlyCountries: this.countryCodes,
-            preferredCountries: ['ch'],
-            localizedCountries: { ch: 'Suisse' },
+            preferredCountries: this.preferredCountries,
+            localizedCountries: this.localizedCountries,
             formatOnDisplay: false,
             utilsScript: intlTelInputUtils
         };
