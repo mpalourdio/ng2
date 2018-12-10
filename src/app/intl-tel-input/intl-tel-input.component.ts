@@ -1,7 +1,6 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { ControlContainer, NgForm } from '@angular/forms';
-import * as intlTelInput from 'intl-tel-input/build/js/intlTelInput';
-import * as intlTelInputUtils from 'intl-tel-input/build/js/utils';
+import * as intlTelInput from 'intl-tel-input';
 
 @Component({
     selector: 'intl-tel-input',
@@ -51,8 +50,7 @@ export class IntlTelInputComponent implements AfterViewInit {
             onlyCountries: this.countryCodes,
             preferredCountries: this.preferredCountries,
             localizedCountries: this.localizedCountries,
-            formatOnDisplay: false,
-            utilsScript: intlTelInputUtils
+            formatOnDisplay: false
         };
         this.modifyCountryData();
         this._intlTelInput = intlTelInput(phoneElement, options);
