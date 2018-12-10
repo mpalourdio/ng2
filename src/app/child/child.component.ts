@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild } from '@angular/core';
+import { IntlTelInputOptions } from 'intl-tel-input-ng';
 import { ApplicationsListService } from '../applications-list.service';
 import { ColorDirective } from '../color.directive';
 
@@ -29,6 +30,10 @@ export class ChildComponent implements OnChanges {
 
     color = 'Enter an existing HTML color';
     inputTextInForm: string;
+    intlTelInputOptions: IntlTelInputOptions = {
+        preferredCountries: ['ch'],
+        onlyCountries: ['fr', 'ch'],
+    };
 
     constructor(private applicationsListService: ApplicationsListService) {
         this.applicationsListService
@@ -40,7 +45,7 @@ export class ChildComponent implements OnChanges {
         this.doubleBindedChildChange.emit(event);
     }
 
-    get doubleBindedChild2() {
+    get doubleBindedChild2(): any {
         return this._doubleBindedChild2;
     }
 

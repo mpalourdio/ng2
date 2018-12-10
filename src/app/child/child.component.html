@@ -17,10 +17,7 @@
     <intl-tel-input
         [cssClass]="'form-control'"
         [required]="true"
-        [options]="{
-            preferredCountries:['ch'],
-            onlyCountries: ['fr', 'ch']
-        }"
+        [options]="intlTelInputOptions"
         [onlyLocalized]="true"
         [(E164PhoneNumber)]="E164PhoneNumber"></intl-tel-input>
     ==> Valid ? : {{!!E164PhoneNumber}}, {{E164PhoneNumber}}
