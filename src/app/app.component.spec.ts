@@ -1,16 +1,16 @@
-import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
-import { ColorDirective } from './color.directive';
-import { By } from '@angular/platform-browser';
-import { ChildComponent } from './child/child.component';
-import { NgHttpLoaderModule } from 'ng-http-loader';
-import { ToUppercasePipe } from './to-uppercase.pipe';
 import { HttpClientModule } from '@angular/common/http';
-import { SearchFilterComponent } from './search-filter/search-filter.component';
-import { FavStarComponent } from './fav-star/fav-star.component';
+import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
+import { IntlTelInputComponent } from 'intl-tel-input-ng';
+import { NgHttpLoaderModule } from 'ng-http-loader';
+import { AppComponent } from './app.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
-import { IntlTelInputComponent } from './intl-tel-input/intl-tel-input.component';
+import { ChildComponent } from './child/child.component';
+import { ColorDirective } from './color.directive';
+import { FavStarComponent } from './fav-star/fav-star.component';
+import { SearchFilterComponent } from './search-filter/search-filter.component';
+import { ToUppercasePipe } from './to-uppercase.pipe';
 
 describe('AppComponent', () => {
 

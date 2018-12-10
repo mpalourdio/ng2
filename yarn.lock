@@ -3428,6 +3428,13 @@ interpret@^1.0.0:
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.1.0.tgz#7ed1b1410c6a0e0f78cf95d3b8440c63f78b8614"
   integrity sha1-ftGxQQxqDg94z5XTuEQMY/eLhhQ=
 
+intl-tel-input-ng@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/intl-tel-input-ng/-/intl-tel-input-ng-0.0.1.tgz#0efb0a78188f943c1df96c379af5060ea59ea398"
+  integrity sha512-/wnSd8Nqi8D/DNS0cHGCssZwcbWOYmDn3qEjoF7ooQCX5WuaE8itjZInK0lCqNN9AZGG0rBDjtl/bF3nBazO/A==
+  dependencies:
+    tslib "^1.9.0"
+
 intl-tel-input@^14.0.6:
   version "14.0.6"
   resolved "https://registry.yarnpkg.com/intl-tel-input/-/intl-tel-input-14.0.6.tgz#ee10689a9b91e0df720d8d59fb0e6e7d35ee6d78"

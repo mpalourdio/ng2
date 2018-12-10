@@ -2,12 +2,12 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
+import { IntlTelInputComponent } from 'intl-tel-input-ng';
+import { CheckboxComponent } from '../checkbox/checkbox.component';
 import { ColorDirective } from '../color.directive';
+import { FavStarComponent } from '../fav-star/fav-star.component';
 import { SearchFilterComponent } from '../search-filter/search-filter.component';
 import { ChildComponent } from './child.component';
-import { FavStarComponent } from '../fav-star/fav-star.component';
-import { CheckboxComponent } from '../checkbox/checkbox.component';
-import { IntlTelInputComponent } from '../intl-tel-input/intl-tel-input.component';
 
 describe('ChildComponent', () => {
     let component: ChildComponent;
@@ -22,7 +22,7 @@ describe('ChildComponent', () => {
                 SearchFilterComponent,
                 FavStarComponent,
                 CheckboxComponent,
-                IntlTelInputComponent
+                IntlTelInputComponent,
             ],
             imports: [FormsModule],
         })
