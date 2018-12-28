@@ -7,7 +7,7 @@ import { ApplicationsListService } from '../applications-list.service';
     styleUrls: ['./search-filter.component.scss']
 })
 export class SearchFilterComponent {
-    private _searchTerm;
+    private _searchTerm: string;
 
     @Input()
     public applicationsList: string[];
@@ -27,7 +27,11 @@ export class SearchFilterComponent {
         this.filterApplicationsList(value);
     }
 
-    private filterApplicationsList(searchTerm) {
+    get searchTerm(): string {
+        return this._searchTerm;
+    }
+
+    private filterApplicationsList(searchTerm): void {
         this.applicationsList = this._appListBuffer.filter((a: any) => a.name.includes(searchTerm));
         this.applicationsListChange.emit(this.applicationsList);
     }
