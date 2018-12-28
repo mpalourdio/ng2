@@ -10,7 +10,7 @@ import { ColorDirective } from '../color.directive';
 })
 export class ChildComponent implements OnChanges {
 
-    public applicationsList: any[] = [];
+    public applicationsList = [];
 
     @Input()
     public doubleBindedChild;
