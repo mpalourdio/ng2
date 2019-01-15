@@ -5,7 +5,7 @@ language: node_js
 addons:
   apt:
     packages:
-      - chromium-brower
+      - chromium-browser
 
 matrix:
   fast_finish: true
