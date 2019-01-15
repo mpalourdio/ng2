@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-    title = 'Hello World!';
-    doubleBindedParent = 'Initial Value from AppComponent';
+    public title = 'Hello World!';
+    public doubleBindedParent = 'Initial Value from AppComponent';
 }

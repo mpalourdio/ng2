@@ -26,7 +26,7 @@ export class FavStarComponent {
         return this._applicationsList;
     }
 
-    toggleFavorite(): void {
+    public toggleFavorite(): void {
         this.application.isFav = !this.application.isFav;
         this.applicationsList = this._applicationsList;
     }

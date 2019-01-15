@@ -6,12 +6,12 @@ import { Directive, ElementRef, Input, OnChanges, SimpleChanges } from '@angular
 export class ColorDirective implements OnChanges {
 
     @Input()
-    color;
+    public color;
 
     constructor(private el: ElementRef) {
     }
 
-    ngOnChanges(changes: SimpleChanges): void {
+    public ngOnChanges(changes: SimpleChanges): void {
         this.el.nativeElement.style.backgroundColor = this.color;
     }
 }

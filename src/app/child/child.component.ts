@@ -24,13 +24,13 @@ export class ChildComponent implements OnChanges {
     public doubleBindedChild2Change = new EventEmitter<string>();
 
     @ViewChild(ColorDirective)
-    colorDirective: ColorDirective;
+    public colorDirective: ColorDirective;
 
     public E164PhoneNumber: string;
 
-    color = 'Enter an existing HTML color';
-    inputTextInForm: string;
-    intlTelInputOptions: IntlTelInputOptions = {
+    public color = 'Enter an existing HTML color';
+    public inputTextInForm: string;
+    public intlTelInputOptions: IntlTelInputOptions = {
         preferredCountries: ['ch'],
         onlyCountries: ['fr', 'ch'],
     };
@@ -41,7 +41,7 @@ export class ChildComponent implements OnChanges {
             .subscribe(l => this.applicationsList = l);
     }
 
-    emitNgModelChanges(event): void {
+    public emitNgModelChanges(event): void {
         this.doubleBindedChildChange.emit(event);
     }
 
@@ -59,7 +59,7 @@ export class ChildComponent implements OnChanges {
         this.doubleBindedChildChange.emit(event);
     }
 
-    ngOnChanges(changes: SimpleChanges): void {
+    public ngOnChanges(changes: SimpleChanges): void {
         console.log('this only works when triggered from parent');
     }
 }
