@@ -9,7 +9,7 @@ export class SearchFilterComponent implements OnInit {
     private _searchTerm: string;
 
     @Input()
-    public applicationsList: string[];
+    public applicationsList: string[] = [];
 
     @Output()
     private applicationsListChange = new EventEmitter<string[]>();
