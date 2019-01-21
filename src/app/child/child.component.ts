@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { IntlTelInputOptions } from 'intl-tel-input-ng';
+import { Observable } from 'rxjs';
 import { ApplicationsListService } from '../applications-list.service';
 import { ColorDirective } from '../color.directive';
 
@@ -8,9 +9,9 @@ import { ColorDirective } from '../color.directive';
     templateUrl: './child.component.html',
     styleUrls: ['./child.component.scss']
 })
-export class ChildComponent implements OnChanges {
+export class ChildComponent implements OnInit, OnChanges {
 
-    public applicationsList = [];
+    public applicationsList$: Observable<string[]>;
 
     @Input()
     public doubleBindedChild;
@@ -36,9 +37,10 @@ export class ChildComponent implements OnChanges {
     };
 
     constructor(private applicationsListService: ApplicationsListService) {
-        this.applicationsListService
-            .applicationsList()
-            .subscribe(l => this.applicationsList = l);
+    }
+
+    public ngOnInit(): void {
+        this.applicationsList$ = this.applicationsListService.applicationsList();
     }
 
     public emitNgModelChanges(event): void {

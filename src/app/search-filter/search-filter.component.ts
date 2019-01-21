@@ -1,12 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ApplicationsListService } from '../applications-list.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
     selector: 'app-search-filter',
     templateUrl: './search-filter.component.html',
     styleUrls: ['./search-filter.component.scss']
 })
-export class SearchFilterComponent {
+export class SearchFilterComponent implements OnInit {
     private _searchTerm: string;
 
     @Input()
@@ -17,9 +16,8 @@ export class SearchFilterComponent {
 
     private _appListBuffer: string[];
 
-
-    constructor(private applicationsListService: ApplicationsListService) {
-        this.applicationsListService.applicationsList().subscribe(l => this._appListBuffer = l);
+    public ngOnInit(): void {
+        this._appListBuffer = JSON.parse(JSON.stringify(this.applicationsList));
     }
 
     set searchTerm(value) {
@@ -32,7 +30,8 @@ export class SearchFilterComponent {
     }
 
     private filterApplicationsList(searchTerm): void {
-        this.applicationsList = this._appListBuffer.filter((a: any) => a.name.includes(searchTerm));
-        this.applicationsListChange.emit(this.applicationsList);
+        this.applicationsListChange.emit(
+            this._appListBuffer.filter((a: any) => a.name.includes(searchTerm))
+        );
     }
 }

@@ -27,7 +27,7 @@
 
 <app-checkbox></app-checkbox>
 
-<div id="app">
+<div id="app" *ngIf="(applicationsList$ | async) as applicationsList">
     <app-search-filter [(applicationsList)]="applicationsList"></app-search-filter>
     <table id="mytable">
         <tr *ngFor="let application of applicationsList">
