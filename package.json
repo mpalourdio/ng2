@@ -29,7 +29,7 @@
     "intl-tel-input-ng": "^0",
     "lodash": "^4.17.10",
     "ng-http-loader": "^5.0.0",
-    "rxjs": "~6.3.3",
+    "rxjs": "~6.4.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
