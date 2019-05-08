@@ -33,7 +33,7 @@ before_install:
 
 script:
   - yarn lint
-  - yarn audit
+#  - yarn audit
   - yarn test --code-coverage
 
 after_script:
