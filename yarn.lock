@@ -3200,10 +3200,10 @@ interpret@^1.0.0:
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.2.0.tgz#d5061a6224be58e8083985f5014d844359576296"
   integrity sha512-mT34yGKMNceBQUoVn7iCDKDntA7SC6gycMAWzGx1z/CMCTV7b2AAtXlo3nRyHZ1FelRkQbQjprHSYGwzLtkVbw==
 
-intl-tel-input-ng@^0:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/intl-tel-input-ng/-/intl-tel-input-ng-0.0.7.tgz#d59b69a7e34c9a86a707d709e7a3353fc5726f10"
-  integrity sha512-ZdHoAP0CTjKHus/KfAndcbFPiBQj8zSjrYC0850LX0b2FNEaZD+VpOZ0fNtE/9kMLK4mk1XJXPlMpij5DaAR5g==
+intl-tel-input-ng@0.0.8-beta.1:
+  version "0.0.8-beta.1"
+  resolved "https://registry.yarnpkg.com/intl-tel-input-ng/-/intl-tel-input-ng-0.0.8-beta.1.tgz#681def6468cb0a8291355efa8a41124381c1f87c"
+  integrity sha512-ym5ghFX2s3HXK7OejIwbSql5f5+wl7Zvh1253ji7z/DLKpIgLpWJgTnQsLMBjO8flK3jfCPsdtRgKV+AsXZtcw==
   dependencies:
     tslib "^1.9.0"
 
