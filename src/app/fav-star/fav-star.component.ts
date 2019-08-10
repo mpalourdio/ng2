@@ -13,9 +13,13 @@ export class FavStarComponent {
 
     private _applicationsList;
 
+    @Output()
+    private applicationsListChange = new EventEmitter<any>();
+
     @Input()
     set applicationsList(value) {
         this._applicationsList = _orderBy(value, ['isFav'], ['desc']);
+        this.applicationsListChange.emit(this._applicationsList);
     }
 
     get applicationsList() {
