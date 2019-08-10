@@ -32,7 +32,7 @@
     <table id="mytable">
         <tr *ngFor="let application of applicationsList">
             <td>
-                <fav-star [application]="application" [(applicationsList)]="applicationsList">
+                <fav-star [application]="application" [applicationsList]="applicationsList">
                     {{application.name}} <span *ngIf="application.isFav">(faved !)</span>
                 </fav-star>
             </td>
