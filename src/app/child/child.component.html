@@ -28,15 +28,5 @@
 <app-checkbox></app-checkbox>
 
 <div id="app" *ngIf="(applicationsList$ | async) as applicationsList">
-    <app-search-filter [(applicationsList)]="applicationsList"></app-search-filter>
-    <table id="mytable">
-        <tr *ngFor="let application of applicationsList">
-            <td>
-                <fav-star [application]="application">
-                    {{application.name}} <span *ngIf="application.isFav">(faved !)</span>
-                </fav-star>
-            </td>
-        </tr>
-    </table>
-    {{applicationsList | json}}
+    <app-search-filter [applicationsList]="applicationsList"></app-search-filter>
 </div>
