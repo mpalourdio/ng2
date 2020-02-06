@@ -1,1 +1,11 @@
 <input type="text" id="filter-input" [(ngModel)]="searchTerm"> {{searchTerm}}
+<table id="mytable">
+    <tr *ngFor="let application of applicationsListFiltered">
+        <td>
+            <fav-star [application]="application">
+                {{application.name}} <span *ngIf="application.isFav">(faved !)</span>
+            </fav-star>
+        </td>
+    </tr>
+</table>
+{{applicationsListFiltered | json}}

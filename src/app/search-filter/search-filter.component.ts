@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-search-filter',
@@ -10,14 +10,10 @@ export class SearchFilterComponent implements OnInit {
 
     @Input()
     public applicationsList: string[] = [];
-
-    @Output()
-    private applicationsListChange = new EventEmitter<string[]>();
-
-    private _appListBuffer: string[];
+    public applicationsListFiltered: string[] = [];
 
     public ngOnInit(): void {
-        this._appListBuffer = JSON.parse(JSON.stringify(this.applicationsList));
+        this.applicationsListFiltered = [...this.applicationsList];
     }
 
     set searchTerm(value) {
@@ -30,8 +26,6 @@ export class SearchFilterComponent implements OnInit {
     }
 
     private filterApplicationsList(searchTerm): void {
-        this.applicationsListChange.emit(
-            this._appListBuffer.filter((a: any) => a.name.includes(searchTerm))
-        );
+        this.applicationsListFiltered = this.applicationsList.filter((a: any) => a.name.includes(searchTerm));
     }
 }

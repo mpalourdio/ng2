@@ -24,7 +24,7 @@ export class ChildComponent implements OnInit, OnChanges {
     @Output()
     public doubleBindedChild2Change = new EventEmitter<string>();
 
-    @ViewChild(ColorDirective, { static: false })
+    @ViewChild(ColorDirective)
     public colorDirective: ColorDirective;
 
     public E164PhoneNumber: string;
