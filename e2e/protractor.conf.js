@@ -4,7 +4,6 @@
 
 const { SpecReporter } = require('jasmine-spec-reporter');
 const chromeExecutablePath = require('puppeteer').executablePath();
-const firefoxExecutablePath = require('puppeteer-firefox').executablePath();
 
 /**
  * @type { import("protractor").Config }
@@ -34,7 +33,6 @@ exports.config = {
     {
       browserName: 'firefox',
       'moz:firefoxOptions': {
-        binary: firefoxExecutablePath,
         args: [
           '--headless',
         ],
