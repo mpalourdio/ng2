@@ -24,7 +24,7 @@ describe('ChildComponent', () => {
                 CheckboxComponent,
                 IntlTelInputComponent,
             ],
-            imports: [FormsModule],
+            imports: [FormsModule]
         })
             .compileComponents();
     }));

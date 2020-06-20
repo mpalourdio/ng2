@@ -10,7 +10,7 @@ describe('SearchFilterComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [SearchFilterComponent],
-            imports: [FormsModule],
+            imports: [FormsModule]
         })
             .compileComponents();
     }));

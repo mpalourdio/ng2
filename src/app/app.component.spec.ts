@@ -29,7 +29,7 @@ describe('AppComponent', () => {
                 CheckboxComponent,
                 IntlTelInputComponent,
             ],
-            imports: [FormsModule, HttpClientModule, NgHttpLoaderModule],
+            imports: [FormsModule, HttpClientModule, NgHttpLoaderModule]
         })
             .compileComponents();
     }));
@@ -58,7 +58,7 @@ describe('AppComponent', () => {
         expect(parentElement.value).toBe(childValue);
     }));
 
-    function dispatchNgModelEventOnElement(selector: string, value: string) {
+    function dispatchNgModelEventOnElement(selector: string, value: string): void {
 
         const input = fixture.debugElement.query(By.css(selector)).nativeElement;
         input.value = value;

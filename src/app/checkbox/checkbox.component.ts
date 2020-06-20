@@ -9,7 +9,7 @@ export class CheckboxComponent {
     public hasFocus = false;
     public isChecked: boolean;
 
-    public toggleLabelClass() {
+    public toggleLabelClass(): void {
         this.hasFocus = !this.hasFocus;
     }
 }

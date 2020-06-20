@@ -16,7 +16,7 @@ export class SearchFilterComponent implements OnInit {
         this.applicationsListFiltered = [...this.applicationsList];
     }
 
-    set searchTerm(value) {
+    set searchTerm(value: string) {
         this._searchTerm = value;
         this.filterApplicationsList(value);
     }
@@ -25,7 +25,7 @@ export class SearchFilterComponent implements OnInit {
         return this._searchTerm;
     }
 
-    private filterApplicationsList(searchTerm): void {
+    private filterApplicationsList(searchTerm: string): void {
         this.applicationsListFiltered = this.applicationsList.filter((a: any) => a.name.includes(searchTerm));
     }
 }

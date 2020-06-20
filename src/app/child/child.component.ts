@@ -33,7 +33,7 @@ export class ChildComponent implements OnInit, OnChanges {
     public inputTextInForm: string;
     public intlTelInputOptions: IntlTelInputOptions = {
         preferredCountries: ['ch'],
-        onlyCountries: ['fr', 'ch'],
+        onlyCountries: ['fr', 'ch']
     };
 
     constructor(private applicationsListService: ApplicationsListService) {
@@ -43,7 +43,7 @@ export class ChildComponent implements OnInit, OnChanges {
         this.applicationsList$ = this.applicationsListService.applicationsList();
     }
 
-    public emitNgModelChanges(event): void {
+    public emitNgModelChanges(event: string): void {
         this.doubleBindedChildChange.emit(event);
     }
 
@@ -52,12 +52,12 @@ export class ChildComponent implements OnInit, OnChanges {
     }
 
     @Input()
-    set doubleBindedChild2(value) {
+    set doubleBindedChild2(value: any) {
         this._doubleBindedChild2 = value;
         this.emitNgModel2Changes(value);
     }
 
-    private emitNgModel2Changes(event): void {
+    private emitNgModel2Changes(event: string): void {
         this.doubleBindedChildChange.emit(event);
     }
 

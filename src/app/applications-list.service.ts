@@ -11,7 +11,7 @@ export class ApplicationsListService {
         return of([
             {name: 'netbeans', isFav: false},
             {name: 'mega', isFav: false},
-            {name: 'intellij', isFav: true}
+            {name: 'intellij', isFav: true},
         ])
             .pipe(delay(5));
     }
