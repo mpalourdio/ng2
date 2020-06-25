@@ -1,14 +1,11 @@
-import { browser, element, by } from 'protractor';
+import { browser, by, element } from 'protractor';
 
 export class Ng2Page {
-  // tslint:disable-next-line:typedef
-  public navigateTo() {
-    browser.waitForAngularEnabled(false);
-    return browser.get('/');
-  }
+    public navigateTo(): Promise<unknown> {
+        return browser.get(browser.baseUrl) as Promise<unknown>;
+    }
 
-  // tslint:disable-next-line:typedef
-  public getParagraphText() {
-    return element(by.css('#title')).getText();
-  }
+    public getParagraphText(): Promise<string> {
+        return element(by.css('#title')).getText() as Promise<string>;
+    }
 }
