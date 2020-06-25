@@ -3,6 +3,7 @@ import { IntlTelInputOptions } from 'intl-tel-input-ng';
 import { Observable } from 'rxjs';
 import { ApplicationsListService } from '../applications-list.service';
 import { ColorDirective } from '../color.directive';
+import { Application } from '../fav-star/application';
 
 @Component({
     selector: 'app-child',
@@ -11,12 +12,12 @@ import { ColorDirective } from '../color.directive';
 })
 export class ChildComponent implements OnInit, OnChanges {
 
-    public applicationsList$: Observable<string[]>;
+    public applicationsList$!: Observable<Application[]>;
 
     @Input()
-    public doubleBindedChild;
+    public doubleBindedChild!: string;
 
-    private _doubleBindedChild2;
+    private _doubleBindedChild2!: string;
 
     @Output()
     public doubleBindedChildChange = new EventEmitter<string>();
@@ -25,12 +26,12 @@ export class ChildComponent implements OnInit, OnChanges {
     public doubleBindedChild2Change = new EventEmitter<string>();
 
     @ViewChild(ColorDirective)
-    public colorDirective: ColorDirective;
+    public colorDirective!: ColorDirective;
 
-    public E164PhoneNumber: string;
+    public E164PhoneNumber!: string;
 
     public color = 'Enter an existing HTML color';
-    public inputTextInForm: string;
+    public inputTextInForm!: string;
     public intlTelInputOptions: IntlTelInputOptions = {
         preferredCountries: ['ch'],
         onlyCountries: ['fr', 'ch']
@@ -47,12 +48,12 @@ export class ChildComponent implements OnInit, OnChanges {
         this.doubleBindedChildChange.emit(event);
     }
 
-    get doubleBindedChild2(): any {
+    get doubleBindedChild2(): string {
         return this._doubleBindedChild2;
     }
 
     @Input()
-    set doubleBindedChild2(value: any) {
+    set doubleBindedChild2(value: string) {
         this._doubleBindedChild2 = value;
         this.emitNgModel2Changes(value);
     }

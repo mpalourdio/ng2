@@ -24,7 +24,7 @@ describe('FavStarComponent', () => {
     });
 
     it('should toggle favorite', () => {
-        component.application = {isFav: false};
+        component.application = { isFav: false, name: 'name' };
         component.toggleFavorite();
         expect(component.application.isFav).toBeTruthy();
     });

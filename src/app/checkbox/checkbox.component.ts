@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class CheckboxComponent {
     public hasFocus = false;
-    public isChecked: boolean;
+    public isChecked = false;
 
     public toggleLabelClass(): void {
         this.hasFocus = !this.hasFocus;
