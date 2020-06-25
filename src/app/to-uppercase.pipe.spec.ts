@@ -2,7 +2,7 @@ import { ToUppercasePipe } from './to-uppercase.pipe';
 
 describe('ToUppercasePipe', () => {
 
-    let pipe;
+    let pipe: ToUppercasePipe;
 
     beforeEach(() => {
         pipe = new ToUppercasePipe();

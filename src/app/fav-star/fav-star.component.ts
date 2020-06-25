@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Application } from './application';
 
 @Component({
     selector: 'fav-star',
@@ -8,7 +9,7 @@ import { Component, Input } from '@angular/core';
 export class FavStarComponent {
 
     @Input()
-    public application;
+    public application!: Application;
 
     public toggleFavorite(): void {
         this.application.isFav = !this.application.isFav;

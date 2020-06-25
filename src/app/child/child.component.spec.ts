@@ -59,7 +59,7 @@ describe('ChildComponent', () => {
         const inputEvent = 'an input';
 
         component.doubleBindedChildChange.subscribe(
-            x => expect(x).toBe(inputEvent)
+            (x: string) => expect(x).toBe(inputEvent)
         );
 
         component.emitNgModelChanges(inputEvent);
@@ -70,7 +70,7 @@ describe('ChildComponent', () => {
         const inputEvent = 'an input';
 
         component.doubleBindedChild2Change.subscribe(
-            x => expect(x).toBe(inputEvent)
+            (x: string) => expect(x).toBe(inputEvent)
         );
 
         component.doubleBindedChild2 = inputEvent;

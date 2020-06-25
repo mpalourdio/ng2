@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Application } from '../fav-star/application';
 
 @Component({
     selector: 'app-search-filter',
@@ -6,11 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
     styleUrls: ['./search-filter.component.scss']
 })
 export class SearchFilterComponent implements OnInit {
-    private _searchTerm: string;
+    private _searchTerm!: string;
 
     @Input()
-    public applicationsList: string[] = [];
-    public applicationsListFiltered: string[] = [];
+    public applicationsList: Application[] = [];
+    public applicationsListFiltered: Application[] = [];
 
     public ngOnInit(): void {
         this.applicationsListFiltered = [...this.applicationsList];
@@ -26,6 +27,6 @@ export class SearchFilterComponent implements OnInit {
     }
 
     private filterApplicationsList(searchTerm: string): void {
-        this.applicationsListFiltered = this.applicationsList.filter((a: any) => a.name.includes(searchTerm));
+        this.applicationsListFiltered = this.applicationsList.filter(a => a.name.includes(searchTerm));
     }
 }
