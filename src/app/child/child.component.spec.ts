@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
@@ -14,7 +14,7 @@ describe('ChildComponent', () => {
     let fixture: ComponentFixture<ChildComponent>;
     let element;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
             declarations: [
                 ChildComponent,
@@ -55,7 +55,7 @@ describe('ChildComponent', () => {
         expect(bgColor).toBe('blue');
     });
 
-    it('should correctly detect ng-model changes and emit notifications', async(() => {
+    it('should correctly detect ng-model changes and emit notifications', waitForAsync(() => {
         const inputEvent = 'an input';
 
         component.doubleBindedChildChange.subscribe(
@@ -66,7 +66,7 @@ describe('ChildComponent', () => {
     }));
 
 
-    it('should correctly detect ng-model changes and emit notifications with getter/setter', async(() => {
+    it('should correctly detect ng-model changes and emit notifications with getter/setter', waitForAsync(() => {
         const inputEvent = 'an input';
 
         component.doubleBindedChild2Change.subscribe(
