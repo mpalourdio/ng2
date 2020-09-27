@@ -14,8 +14,8 @@ describe('ChildComponent', () => {
     let fixture: ComponentFixture<ChildComponent>;
     let element;
 
-    beforeEach(waitForAsync(() => {
-        TestBed.configureTestingModule({
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
             declarations: [
                 ChildComponent,
                 ColorDirective,
@@ -27,7 +27,7 @@ describe('ChildComponent', () => {
             imports: [FormsModule]
         })
             .compileComponents();
-    }));
+    });
 
     beforeEach(() => {
         fixture = TestBed.createComponent(ChildComponent);

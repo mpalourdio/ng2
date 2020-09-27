@@ -17,8 +17,8 @@ describe('AppComponent', () => {
     let component: AppComponent;
     let fixture: ComponentFixture<AppComponent>;
 
-    beforeEach(waitForAsync(() => {
-        TestBed.configureTestingModule({
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
             declarations: [
                 AppComponent,
                 ChildComponent,
@@ -32,7 +32,7 @@ describe('AppComponent', () => {
             imports: [FormsModule, HttpClientModule, NgHttpLoaderModule]
         })
             .compileComponents();
-    }));
+    });
 
     beforeEach(() => {
         fixture = TestBed.createComponent(AppComponent);
