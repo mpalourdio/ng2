@@ -7,8 +7,8 @@ describe('ng2 App', () => {
     page = new Ng2Page();
   });
 
-  it('should display message saying hello world', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Hello World!');
+  it('should display message saying hello world', async () => {
+    await page.navigateTo();
+    expect(await page.getParagraphText()).toEqual('Hello World!');
   });
 });
