@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mpalourdio/ng2.svg?branch=master)](https://travis-ci.org/mpalourdio/ng2)
+![Build Status](https://github.com/mpalourdio/ng2/workflows/CI/badge.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/mpalourdio/ng2/badge.svg?branch=master)](https://coveralls.io/github/mpalourdio/ng2?branch=master)
 # Ng2
 
