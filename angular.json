@@ -99,7 +99,6 @@
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
             "watch": false,
-
             "styles": [
               "src/styles.scss"
             ],
@@ -113,15 +112,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
             ]
           }
         },
@@ -143,5 +138,8 @@
       }
     }
   },
-  "defaultProject": "ng2"
+  "defaultProject": "ng2",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
