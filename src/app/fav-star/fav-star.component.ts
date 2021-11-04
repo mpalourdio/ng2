@@ -9,9 +9,9 @@ import { Application } from './application';
 export class FavStarComponent {
 
     @Input()
-    public application!: Application;
+    application!: Application;
 
-    public toggleFavorite(): void {
+    toggleFavorite(): void {
         this.application.isFav = !this.application.isFav;
     }
 }

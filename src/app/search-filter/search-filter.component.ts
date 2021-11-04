@@ -10,10 +10,10 @@ export class SearchFilterComponent implements OnInit {
     private _searchTerm!: string;
 
     @Input()
-    public applicationsList: Application[] = [];
-    public applicationsListFiltered: Application[] = [];
+    applicationsList: Application[] = [];
+    applicationsListFiltered: Application[] = [];
 
-    public ngOnInit(): void {
+    ngOnInit(): void {
         this.applicationsListFiltered = [...this.applicationsList];
     }
 

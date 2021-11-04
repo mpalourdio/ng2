@@ -12,27 +12,27 @@ import { Application } from '../fav-star/application';
 })
 export class ChildComponent implements OnInit, OnChanges {
 
-    public applicationsList$!: Observable<Application[]>;
+    applicationsList$!: Observable<Application[]>;
 
     @Input()
-    public doubleBindedChild!: string;
+    doubleBindedChild!: string;
 
     private _doubleBindedChild2!: string;
 
     @Output()
-    public doubleBindedChildChange = new EventEmitter<string>();
+    doubleBindedChildChange = new EventEmitter<string>();
 
     @Output()
-    public doubleBindedChild2Change = new EventEmitter<string>();
+    doubleBindedChild2Change = new EventEmitter<string>();
 
     @ViewChild(ColorDirective)
-    public colorDirective!: ColorDirective;
+    colorDirective!: ColorDirective;
 
-    public E164PhoneNumber!: string;
+    E164PhoneNumber!: string;
 
-    public color = 'Enter an existing HTML color';
-    public inputTextInForm!: string;
-    public intlTelInputOptions: IntlTelInputOptions = {
+    color = 'Enter an existing HTML color';
+    inputTextInForm!: string;
+    intlTelInputOptions: IntlTelInputOptions = {
         preferredCountries: ['ch'],
         onlyCountries: ['fr', 'ch']
     };
@@ -40,11 +40,11 @@ export class ChildComponent implements OnInit, OnChanges {
     constructor(private applicationsListService: ApplicationsListService) {
     }
 
-    public ngOnInit(): void {
+    ngOnInit(): void {
         this.applicationsList$ = this.applicationsListService.applicationsList();
     }
 
-    public emitNgModelChanges(event: string): void {
+    emitNgModelChanges(event: string): void {
         this.doubleBindedChildChange.emit(event);
     }
 
@@ -62,7 +62,7 @@ export class ChildComponent implements OnInit, OnChanges {
         this.doubleBindedChildChange.emit(event);
     }
 
-    public ngOnChanges(changes: SimpleChanges): void {
+    ngOnChanges(changes: SimpleChanges): void {
         console.log('this only works when triggered from parent');
     }
 }

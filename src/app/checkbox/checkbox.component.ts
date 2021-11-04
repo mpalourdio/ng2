@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
     styleUrls: ['./checkbox.component.scss']
 })
 export class CheckboxComponent {
-    public hasFocus = false;
-    public isChecked = false;
+    hasFocus = false;
+    isChecked = false;
 
-    public toggleLabelClass(): void {
+    toggleLabelClass(): void {
         this.hasFocus = !this.hasFocus;
     }
 }
