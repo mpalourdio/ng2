@@ -9,7 +9,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "pree2e": "webdriver-manager update",
     "e2e": "ng e2e",
     "audit:prod": "npm audit --omit=dev"
   },
@@ -44,10 +43,11 @@
     "@angular-eslint/template-parser": "14.1.2",
     "@angular/cli": "~14.2.0",
     "@angular/compiler-cli": "^14.2.0",
+    "@cypress/schematic": "^2.1.1",
     "@types/jasmine": "~4.0.0",
-    "@types/node": "^16.0.0",
     "@typescript-eslint/eslint-plugin": "5.37.0",
     "@typescript-eslint/parser": "5.37.0",
+    "cypress": "latest",
     "eslint": "^8.23.1",
     "jasmine-core": "~4.3.0",
     "jasmine-spec-reporter": "~5.0.0",
@@ -57,9 +57,7 @@
     "karma-firefox-launcher": "^1.1.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "protractor": "~7.0.0",
     "puppeteer": "^18.0.0",
-    "ts-node": "^10.4.0",
     "typescript": "~4.7.2"
   }
 }
