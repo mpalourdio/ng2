@@ -30,7 +30,7 @@
     "intl-tel-input-ng": "^0.7.0",
     "lodash": "^4.17.10",
     "ng-http-loader": "^13.0.0",
-    "rxjs": "~7.5.0",
+    "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },
@@ -41,7 +41,7 @@
     "@angular-eslint/eslint-plugin-template": "^15.0.0",
     "@angular-eslint/schematics": "^15.0.0",
     "@angular-eslint/template-parser": "^15.0.0",
-    "@angular/cli": "~15.0.0",
+    "@angular/cli": "^15.0.0",
     "@angular/compiler-cli": "^15.0.0",
     "@cypress/schematic": "^2.1.1",
     "@types/jasmine": "~4.3.0",
@@ -58,6 +58,6 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "puppeteer": "^19.0.0",
-    "typescript": "~4.8.4"
+    "typescript": "~4.9.4"
   }
 }
