@@ -62,6 +62,7 @@ export class ChildComponent implements OnInit, OnChanges {
         this.doubleBindedChildChange.emit(event);
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     ngOnChanges(changes: SimpleChanges): void {
         console.log('this only works when triggered from parent');
     }

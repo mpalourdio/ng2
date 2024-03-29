@@ -12,7 +12,6 @@ import { ChildComponent } from './child.component';
 describe('ChildComponent', () => {
     let component: ChildComponent;
     let fixture: ComponentFixture<ChildComponent>;
-    let element;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
@@ -33,8 +32,6 @@ describe('ChildComponent', () => {
         fixture = TestBed.createComponent(ChildComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
-
-        element = fixture.nativeElement; // to access DOM element
     });
 
     it('should create a component instance', () => {
