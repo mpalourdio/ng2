@@ -1,4 +1,4 @@
-[![Build Status](https://github.com/mpalourdio/ng2/workflows/CI/badge.svg?branch=master)](https://github.com/mpalourdio/ng2/actions)
+[![CI](https://github.com/mpalourdio/ng2/actions/workflows/main.yml/badge.svg)](https://github.com/mpalourdio/ng2/actions/workflows/main.yml)
 [![Coverage Status](https://coveralls.io/repos/github/mpalourdio/ng2/badge.svg?branch=master)](https://coveralls.io/github/mpalourdio/ng2?branch=master)
 # Ng2
 
