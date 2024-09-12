@@ -1,14 +1,29 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
-import { IntlTelInputOptions } from 'intl-tel-input-ng';
+import { IntlTelInputComponent, IntlTelInputOptions } from 'intl-tel-input-ng';
 import { Observable } from 'rxjs';
 import { ApplicationsListService } from '../applications-list.service';
 import { ColorDirective } from '../color.directive';
 import { Application } from '../fav-star/application';
+import { FormsModule } from "@angular/forms";
+import { AsyncPipe, JsonPipe, NgIf } from "@angular/common";
+import { CheckboxComponent } from "../checkbox/checkbox.component";
+import { SearchFilterComponent } from "../search-filter/search-filter.component";
 
 @Component({
     selector: 'app-child',
+    standalone: true,
     templateUrl: './child.component.html',
-    styleUrls: ['./child.component.scss']
+    styleUrls: ['./child.component.scss'],
+    imports: [
+        ColorDirective,
+        IntlTelInputComponent,
+        FormsModule,
+        JsonPipe,
+        CheckboxComponent,
+        SearchFilterComponent,
+        NgIf,
+        AsyncPipe,
+    ]
 })
 export class ChildComponent implements OnInit, OnChanges {
 

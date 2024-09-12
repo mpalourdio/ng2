@@ -1,12 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-
-import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
-import { IntlTelInputComponent } from 'intl-tel-input-ng';
-import { CheckboxComponent } from '../checkbox/checkbox.component';
-import { ColorDirective } from '../color.directive';
-import { FavStarComponent } from '../fav-star/fav-star.component';
-import { SearchFilterComponent } from '../search-filter/search-filter.component';
 import { ChildComponent } from './child.component';
 
 describe('ChildComponent', () => {
@@ -15,15 +8,9 @@ describe('ChildComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [
+            imports: [
                 ChildComponent,
-                ColorDirective,
-                SearchFilterComponent,
-                FavStarComponent,
-                CheckboxComponent,
-                IntlTelInputComponent,
-            ],
-            imports: [FormsModule]
+            ]
         })
             .compileComponents();
     });

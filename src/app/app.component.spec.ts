@@ -1,16 +1,6 @@
-import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
-import { IntlTelInputComponent } from 'intl-tel-input-ng';
-import { NgHttpLoaderModule } from 'ng-http-loader';
 import { AppComponent } from './app.component';
-import { CheckboxComponent } from './checkbox/checkbox.component';
-import { ChildComponent } from './child/child.component';
-import { ColorDirective } from './color.directive';
-import { FavStarComponent } from './fav-star/fav-star.component';
-import { SearchFilterComponent } from './search-filter/search-filter.component';
-import { ToUppercasePipe } from './to-uppercase.pipe';
 
 describe('AppComponent', () => {
 
@@ -19,17 +9,9 @@ describe('AppComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [
+            imports: [
                 AppComponent,
-                ChildComponent,
-                SearchFilterComponent,
-                ColorDirective,
-                ToUppercasePipe,
-                FavStarComponent,
-                CheckboxComponent,
-                IntlTelInputComponent,
-            ],
-            imports: [FormsModule, HttpClientModule, NgHttpLoaderModule]
+            ]
         })
             .compileComponents();
     });

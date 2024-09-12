@@ -11,7 +11,7 @@ export class ApplicationsListService {
     applicationsList(): Observable<Application[]> {
         return of([
             { name: 'netbeans', isFav: false },
-            { name: 'mega', isFav: false },
+            { name: 'eclipse', isFav: false },
             { name: 'intellij', isFav: true },
         ])
             .pipe(delay(5));

@@ -1,7 +1,8 @@
 import { Directive, ElementRef, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Directive({
-    selector: '[appColor]'
+    selector: '[appColor]',
+    standalone: true
 })
 export class ColorDirective implements OnChanges {
 

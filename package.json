@@ -27,7 +27,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.0",
     "@fortawesome/free-solid-svg-icons": "^6.1.0",
     "intl-tel-input": "^19.0.0",
-    "intl-tel-input-ng": "^0.12.0",
+    "intl-tel-input-ng": "^0.13.0",
     "lodash": "^4.17.10",
     "ng-http-loader": "^16.0.0",
     "rxjs": "~7.8.0",

@@ -8,7 +8,7 @@ describe('FavStarComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [FavStarComponent]
+            imports: [FavStarComponent]
         })
             .compileComponents();
     });
