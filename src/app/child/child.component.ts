@@ -2,7 +2,7 @@ import {
     Component,
     EventEmitter,
     Input,
-    model, ModelSignal,
+    model,
     OnChanges,
     OnInit,
     Output,
