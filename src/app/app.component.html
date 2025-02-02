@@ -6,13 +6,15 @@
 
     <div>
         <input type="text" id="double-binded-parent" [(ngModel)]="doubleBindedParent"><br/>
-        {{doubleBindedParent | toUppercase}}
+        {{doubleBindedParent | toUppercase}}<br>
+        {{signal | toUppercase}}
     </div>
 
     <div>
         <app-child
             [(doubleBindedChild)]="doubleBindedParent"
-            [(doubleBindedChild2)]="doubleBindedParent">
+            [(doubleBindedChild2)]="doubleBindedParent"
+            [(doubleBindedChild3)]="signal">
         </app-child>
     </div>
 </div>

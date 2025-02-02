@@ -59,4 +59,14 @@ describe('ChildComponent', () => {
 
         component.doubleBindedChild2 = inputEvent;
     }));
+
+    it('should correctly emit signal changes', waitForAsync(() => {
+        const inputEvent = 'an input';
+
+        component.doubleBindedChild3.subscribe(
+            (x: string | undefined) => expect(x).toBe(inputEvent)
+        );
+
+        component.doubleBindedChild3.set(inputEvent);
+    }));
 });

@@ -16,6 +16,7 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 export class AppComponent {
     title = 'Hello World!';
     doubleBindedParent = 'Initial Value from AppComponent';
+    signal = 'Initial Signal Value from AppComponent';
 
     constructor() {
         library.add(far, fas);

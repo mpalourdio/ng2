@@ -1,4 +1,14 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
+import {
+    Component,
+    EventEmitter,
+    Input,
+    model, ModelSignal,
+    OnChanges,
+    OnInit,
+    Output,
+    SimpleChanges,
+    ViewChild
+} from '@angular/core';
 import { IntlTelInputComponent, IntlTelInputOptions } from 'intl-tel-input-ng';
 import { Observable } from 'rxjs';
 import { ApplicationsListService } from '../applications-list.service';
@@ -39,6 +49,8 @@ export class ChildComponent implements OnInit, OnChanges {
 
     @Output()
     doubleBindedChild2Change = new EventEmitter<string>();
+
+    doubleBindedChild3 = model<string>();
 
     @ViewChild(ColorDirective)
     colorDirective!: ColorDirective;
