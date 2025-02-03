@@ -50,7 +50,7 @@ export class ChildComponent implements OnInit, OnChanges {
     @Output()
     doubleBindedChild2Change = new EventEmitter<string>();
 
-    doubleBindedChild3 = model<string>();
+    readonly doubleBindedChild3 = model<string>();
 
     @ViewChild(ColorDirective)
     colorDirective!: ColorDirective;
