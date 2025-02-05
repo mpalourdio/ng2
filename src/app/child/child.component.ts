@@ -68,7 +68,7 @@ export class ChildComponent implements OnInit, OnChanges {
     }
 
     ngOnInit(): void {
-        this.applicationsList$ = this.applicationsListService.applicationsList();
+        this.applicationsList$ = this.applicationsListService.applicationsList$();
     }
 
     emitNgModelChanges(event: string): void {

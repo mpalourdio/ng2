@@ -8,7 +8,7 @@ import { Application } from './fav-star/application';
 })
 export class ApplicationsListService {
 
-    applicationsList(): Observable<Application[]> {
+    applicationsList$(): Observable<Application[]> {
         return of([
             { name: 'netbeans', isFav: false },
             { name: 'eclipse', isFav: false },
