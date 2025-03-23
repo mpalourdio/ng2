@@ -26,10 +26,10 @@ jobs:
           npm run audit:prod
           npm run build
           npm run e2e
-          npm test -- --code-coverage
+          npm test -- --coverage
 
       - name: Coveralls
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: ./coverage/ng2/lcov.info
+          path-to-lcov: ./coverage/lcov.info
