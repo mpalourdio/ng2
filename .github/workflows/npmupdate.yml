@@ -1,4 +1,4 @@
-name: CI
+name: npm update
 
 on:
   schedule:
@@ -28,6 +28,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+
+      - name: update
+        run: |
+          npm update
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
