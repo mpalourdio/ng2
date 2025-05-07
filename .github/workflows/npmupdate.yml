@@ -43,3 +43,4 @@ jobs:
           delete-branch: 'true'
           title: 'chore: npm update'
           labels: 'npm update'
+          body: ''
