@@ -1,8 +1,6 @@
 name: npm update
 
 on: [ workflow_dispatch ]
-#  schedule:
-#    - cron: "*/5 * * * *"
 
 env:
   FORCE_COLOR: 3
@@ -11,10 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
-      pull-requests: write
-      issues: write
+#    permissions:
+#      contents: write
+#      pull-requests: write
+#      issues: write
 
     strategy:
       max-parallel: 4
@@ -37,6 +35,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
+          token: '${{ secrets.GH_TOKEN_PAT }}'
           commit-message: "chore: npm update"
           committer: 'Michel Palourdio <mpalourdio@gmail.com>'
           author: 'Michel Palourdio <mpalourdio@gmail.com>'
