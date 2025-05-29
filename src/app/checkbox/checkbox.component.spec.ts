@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { CheckboxComponent } from './checkbox.component';
+import { provideExperimentalZonelessChangeDetection } from "@angular/core";
 
 describe('CheckboxComponent', () => {
     let component: CheckboxComponent;
@@ -8,24 +9,28 @@ describe('CheckboxComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [CheckboxComponent]
+            imports: [CheckboxComponent],
+            providers: [
+                provideExperimentalZonelessChangeDetection(),
+            ]
         })
             .compileComponents();
     });
 
-    beforeEach(() => {
+    beforeEach(async () => {
         fixture = TestBed.createComponent(CheckboxComponent);
         component = fixture.componentInstance;
-        fixture.detectChanges();
+        await fixture.whenStable();
     });
 
     it('should create', () => {
         expect(component).toBeTruthy();
     });
 
-    it('should toggle heart class when checkbox checked', () => {
+    it('should toggle heart class when checkbox checked', async () => {
         component.isChecked = true;
-        fixture.detectChanges();
+        fixture.changeDetectorRef.markForCheck();
+        await fixture.whenStable();
 
         const heart: HTMLElement = fixture
             .debugElement
@@ -36,14 +41,14 @@ describe('CheckboxComponent', () => {
         expect(heart.className).not.toContain('is-not-checked');
 
         component.isChecked = false;
-        fixture.detectChanges();
+        fixture.changeDetectorRef.markForCheck();
+        await fixture.whenStable();
 
         expect(heart.className).toContain('is-not-checked');
         expect(heart.className).not.toContain('is-checked');
     });
 
-    it('should outline label when checkbox has focus', () => {
-
+    it('should outline label when checkbox has focus', async () => {
         const heart: HTMLElement = fixture
             .debugElement
             .query(By.css('.heart'))
@@ -55,13 +60,13 @@ describe('CheckboxComponent', () => {
             .nativeElement;
 
         checkbox.focus();
-        fixture.detectChanges();
+        await fixture.whenStable();
 
         expect(heart.className).toContain('has-focus');
         expect(heart.className).toContain('is-not-checked');
 
         checkbox.blur();
-        fixture.detectChanges();
+        await fixture.whenStable();
 
         expect(heart.className).not.toContain('has-focus');
         expect(heart.className).toContain('is-not-checked');

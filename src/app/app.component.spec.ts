@@ -1,6 +1,7 @@
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { provideExperimentalZonelessChangeDetection } from "@angular/core";
 
 describe('AppComponent', () => {
 
@@ -11,16 +12,18 @@ describe('AppComponent', () => {
         await TestBed.configureTestingModule({
             imports: [
                 AppComponent,
+            ],
+            providers: [
+                provideExperimentalZonelessChangeDetection(),
             ]
         })
             .compileComponents();
     });
 
-    beforeEach(() => {
+    beforeEach(async () => {
         fixture = TestBed.createComponent(AppComponent);
         component = fixture.componentInstance;
-
-        fixture.detectChanges();
+        await fixture.whenStable();
     });
 
     it('should create a component instance', () => {
@@ -46,7 +49,6 @@ describe('AppComponent', () => {
         input.value = value;
 
         input.dispatchEvent(new Event('input'));
-        fixture.detectChanges();
         tick();
     }
 });

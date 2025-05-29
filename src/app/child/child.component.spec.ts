@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { ChildComponent } from './child.component';
+import { provideExperimentalZonelessChangeDetection } from "@angular/core";
 
 describe('ChildComponent', () => {
     let component: ChildComponent;
@@ -10,6 +11,9 @@ describe('ChildComponent', () => {
         await TestBed.configureTestingModule({
             imports: [
                 ChildComponent,
+            ],
+            providers: [
+                provideExperimentalZonelessChangeDetection(),
             ]
         })
             .compileComponents();
@@ -18,16 +22,15 @@ describe('ChildComponent', () => {
     beforeEach(() => {
         fixture = TestBed.createComponent(ChildComponent);
         component = fixture.componentInstance;
-        fixture.detectChanges();
     });
 
     it('should create a component instance', () => {
         expect(component).toBeTruthy();
     });
 
-    it('should detect color changes', () => {
+    it('should detect color changes', async () => {
         component.color = 'blue';
-        fixture.detectChanges();
+        await fixture.whenStable();
 
         const bgColor = fixture
             .debugElement
