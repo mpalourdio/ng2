@@ -28,6 +28,8 @@
 
 <app-checkbox></app-checkbox>
 
-<div id="app" *ngIf="(applicationsList$ | async) as applicationsList">
-    <app-search-filter [applicationsList]="applicationsList"></app-search-filter>
-</div>
+@if ((applicationsList$ | async); as applicationsList) {
+    <div id="app">
+        <app-search-filter [applicationsList]="applicationsList"></app-search-filter>
+    </div>
+}

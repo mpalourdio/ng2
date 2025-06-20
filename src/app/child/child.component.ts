@@ -1,3 +1,4 @@
+import { AsyncPipe, JsonPipe } from '@angular/common';
 import {
     Component,
     EventEmitter,
@@ -9,15 +10,14 @@ import {
     SimpleChanges,
     ViewChild
 } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { IntlTelInputComponent, IntlTelInputOptions } from 'intl-tel-input-ng';
 import { Observable } from 'rxjs';
 import { ApplicationsListService } from '../applications-list.service';
+import { CheckboxComponent } from '../checkbox/checkbox.component';
 import { ColorDirective } from '../color.directive';
 import { Application } from '../fav-star/application';
-import { FormsModule } from "@angular/forms";
-import { AsyncPipe, JsonPipe, NgIf } from "@angular/common";
-import { CheckboxComponent } from "../checkbox/checkbox.component";
-import { SearchFilterComponent } from "../search-filter/search-filter.component";
+import { SearchFilterComponent } from '../search-filter/search-filter.component';
 
 @Component({
     selector: 'app-child',
@@ -31,7 +31,6 @@ import { SearchFilterComponent } from "../search-filter/search-filter.component"
         JsonPipe,
         CheckboxComponent,
         SearchFilterComponent,
-        NgIf,
         AsyncPipe,
     ]
 })
