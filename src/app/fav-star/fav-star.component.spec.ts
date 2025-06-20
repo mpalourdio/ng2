@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FavStarComponent } from './fav-star.component';
-import { provideExperimentalZonelessChangeDetection } from "@angular/core";
+import { provideZonelessChangeDetection } from "@angular/core";
 
 describe('FavStarComponent', () => {
     let component: FavStarComponent;
@@ -11,7 +11,7 @@ describe('FavStarComponent', () => {
         await TestBed.configureTestingModule({
             imports: [FavStarComponent],
             providers: [
-                provideExperimentalZonelessChangeDetection(),
+                provideZonelessChangeDetection(),
             ]
         })
             .compileComponents();
