@@ -1,7 +1,7 @@
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { provideExperimentalZonelessChangeDetection } from "@angular/core";
+import { provideZonelessChangeDetection } from "@angular/core";
 
 describe('AppComponent', () => {
 
@@ -14,7 +14,7 @@ describe('AppComponent', () => {
                 AppComponent,
             ],
             providers: [
-                provideExperimentalZonelessChangeDetection(),
+                provideZonelessChangeDetection(),
             ]
         })
             .compileComponents();

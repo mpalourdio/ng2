@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { ChildComponent } from './child.component';
-import { provideExperimentalZonelessChangeDetection } from "@angular/core";
+import { provideZonelessChangeDetection } from "@angular/core";
 
 describe('ChildComponent', () => {
     let component: ChildComponent;
@@ -13,7 +13,7 @@ describe('ChildComponent', () => {
                 ChildComponent,
             ],
             providers: [
-                provideExperimentalZonelessChangeDetection(),
+                provideZonelessChangeDetection(),
             ]
         })
             .compileComponents();
