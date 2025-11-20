@@ -1,7 +1,6 @@
-import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { provideZonelessChangeDetection } from "@angular/core";
 
 describe('AppComponent', () => {
 
@@ -12,9 +11,6 @@ describe('AppComponent', () => {
         await TestBed.configureTestingModule({
             imports: [
                 AppComponent,
-            ],
-            providers: [
-                provideZonelessChangeDetection(),
             ]
         })
             .compileComponents();
@@ -31,9 +27,10 @@ describe('AppComponent', () => {
         expect(component.title).toBe('Hello World!');
     });
 
-    it('should correctly double bind', fakeAsync(() => {
+    it('should correctly double bind', async () => {
         const childValue = 'changed';
         dispatchNgModelEventOnElement('#double-binded-child', childValue);
+        await fixture.whenStable();
 
         const parentElement = fixture
             .debugElement
@@ -41,7 +38,7 @@ describe('AppComponent', () => {
             .nativeElement;
 
         expect(parentElement.value).toBe(childValue);
-    }));
+    });
 
     function dispatchNgModelEventOnElement(selector: string, value: string): void {
 
@@ -49,6 +46,5 @@ describe('AppComponent', () => {
         input.value = value;
 
         input.dispatchEvent(new Event('input'));
-        tick();
     }
 });
