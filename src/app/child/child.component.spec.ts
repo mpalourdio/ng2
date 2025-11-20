@@ -1,7 +1,6 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { ChildComponent } from './child.component';
-import { provideZonelessChangeDetection } from "@angular/core";
 
 describe('ChildComponent', () => {
     let component: ChildComponent;
@@ -11,9 +10,6 @@ describe('ChildComponent', () => {
         await TestBed.configureTestingModule({
             imports: [
                 ChildComponent,
-            ],
-            providers: [
-                provideZonelessChangeDetection(),
             ]
         })
             .compileComponents();
@@ -42,7 +38,7 @@ describe('ChildComponent', () => {
         expect(bgColor).toBe('blue');
     });
 
-    it('should correctly detect ng-model changes and emit notifications', waitForAsync(() => {
+    it('should correctly detect ng-model changes and emit notifications', () => {
         const inputEvent = 'an input';
 
         component.doubleBindedChildChange.subscribe(
@@ -50,10 +46,9 @@ describe('ChildComponent', () => {
         );
 
         component.emitNgModelChanges(inputEvent);
-    }));
+    });
 
-
-    it('should correctly detect ng-model changes and emit notifications with getter/setter', waitForAsync(() => {
+    it('should correctly detect ng-model changes and emit notifications with getter/setter', () => {
         const inputEvent = 'an input';
 
         component.doubleBindedChild2Change.subscribe(
@@ -61,9 +56,9 @@ describe('ChildComponent', () => {
         );
 
         component.doubleBindedChild2 = inputEvent;
-    }));
+    });
 
-    it('should correctly emit signal changes', waitForAsync(() => {
+    it('should correctly emit signal changes', () => {
         const inputEvent = 'an input';
 
         component.doubleBindedChild3.subscribe(
@@ -71,5 +66,5 @@ describe('ChildComponent', () => {
         );
 
         component.doubleBindedChild3.set(inputEvent);
-    }));
+    });
 });
