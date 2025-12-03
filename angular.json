@@ -78,7 +78,8 @@
             "watch": false,
             "coverageReporters": [
               "lcovonly"
-            ]
+            ],
+            "runnerConfig": "vitest.config.ts"
           }
         },
         "lint": {
