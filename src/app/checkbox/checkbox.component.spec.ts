@@ -24,7 +24,7 @@ describe('CheckboxComponent', () => {
     });
 
     it('should toggle heart class when checkbox checked', async () => {
-        component.isChecked = true;
+        component.isChecked.set(true);
         fixture.changeDetectorRef.markForCheck();
         await fixture.whenStable();
 
@@ -36,7 +36,7 @@ describe('CheckboxComponent', () => {
         expect(heart.className).toContain('is-checked');
         expect(heart.className).not.toContain('is-not-checked');
 
-        component.isChecked = false;
+        component.isChecked.set(false);
         fixture.changeDetectorRef.markForCheck();
         await fixture.whenStable();
 
