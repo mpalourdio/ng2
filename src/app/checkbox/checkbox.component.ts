@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, model } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { NgClass } from "@angular/common";
 
@@ -10,10 +10,10 @@ import { NgClass } from "@angular/common";
     imports: [FormsModule, NgClass]
 })
 export class CheckboxComponent {
-    hasFocus = false;
-    isChecked = false;
+    hasFocus = model(false);
+    isChecked = model(false);
 
     toggleLabelClass(): void {
-        this.hasFocus = !this.hasFocus;
+        this.hasFocus.set(!this.hasFocus());
     }
 }
